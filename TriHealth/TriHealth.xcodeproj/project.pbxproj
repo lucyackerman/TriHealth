@@ -14,6 +14,7 @@
 		3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */; };
 		3D7FDEE1202A34DE005537F4 /* TriHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */; };
 		3D7FDEEC202A34DE005537F4 /* TriHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */; };
+		885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3D7FDEE7202A34DE005537F4 /* TriHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriHealthUITests.swift; sourceTree = "<group>"; };
 		3D7FDEED202A34DE005537F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
 				3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */,
 				3D7FDED7202A34DE005537F4 /* Info.plist */,
+				885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */,
 			);
 			path = TriHealth;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */,
+				885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */,
 				3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */,
 				3D7FDED1202A34DE005537F4 /* Main.storyboard in Resources */,
 			);
