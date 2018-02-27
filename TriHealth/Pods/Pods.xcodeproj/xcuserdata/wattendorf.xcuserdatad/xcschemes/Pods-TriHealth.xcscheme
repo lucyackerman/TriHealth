@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9B15CBDC5F0AAAF0D1AFDDB9738781D"
+               BlueprintIdentifier = "E8D93BEA4117EE5E383B3550B1E6B3CC"
                BlueprintName = "Pods-TriHealth"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-TriHealth.framework">
