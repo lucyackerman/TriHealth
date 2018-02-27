@@ -10,7 +10,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //Connects XCode to Firebase account
+    let ref = FIRDatabase.database().reference(withPath: "TriHealth")
+    
     @IBOutlet weak var glass1: UIImageView!
     
     @IBOutlet weak var glass2: UIImageView!
