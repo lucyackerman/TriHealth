@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265326811BB38FF9618BC3B2 /* Pods_TriHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FEEE7D8591F64E55D46CF1 /* Pods_TriHealth.framework */; };
 		3D7FDECC202A34DE005537F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDECB202A34DE005537F4 /* AppDelegate.swift */; };
 		3D7FDECE202A34DE005537F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDECD202A34DE005537F4 /* ViewController.swift */; };
 		3D7FDED1202A34DE005537F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDECF202A34DE005537F4 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		3D7FDEE1202A34DE005537F4 /* TriHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */; };
 		3D7FDEEC202A34DE005537F4 /* TriHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */; };
 		885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */; };
+		ECE54C9C70C3CB177909C85C /* Pods_TriHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B4DBA1417451747B89C6E1 /* Pods_TriHealthUITests.framework */; };
+		FD39901FB5C5A479E63C0BEF /* Pods_TriHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,16 @@
 		3D7FDEE7202A34DE005537F4 /* TriHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriHealthUITests.swift; sourceTree = "<group>"; };
 		3D7FDEED202A34DE005537F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F40E76478B9C3F74B630364 /* Pods-TriHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealthTests/Pods-TriHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		46B4DBA1417451747B89C6E1 /* Pods_TriHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD66F67E4C4BF1B2E6D489F /* Pods-TriHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		800CAF6C1E134F49AA00CB02 /* Pods-TriHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealthTests/Pods-TriHealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.release.xcconfig"; sourceTree = "<group>"; };
+		B3191B6EEABA3B5DF54E9B27 /* Pods-TriHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealthUITests/Pods-TriHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC343FC10343E324BDD13D21 /* Pods-TriHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealthUITests/Pods-TriHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4FEEE7D8591F64E55D46CF1 /* Pods_TriHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265326811BB38FF9618BC3B2 /* Pods_TriHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD39901FB5C5A479E63C0BEF /* Pods_TriHealthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE54C9C70C3CB177909C85C /* Pods_TriHealthUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FD3A63F4F3A37E491F05685 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4FEEE7D8591F64E55D46CF1 /* Pods_TriHealth.framework */,
+				7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */,
+				46B4DBA1417451747B89C6E1 /* Pods_TriHealthUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3D7FDEBF202A34DD005537F4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				3D7FDEDF202A34DE005537F4 /* TriHealthTests */,
 				3D7FDEEA202A34DE005537F4 /* TriHealthUITests */,
 				3D7FDEC9202A34DE005537F4 /* Products */,
+				BECA94C057022DE1067317E5 /* Pods */,
+				0FD3A63F4F3A37E491F05685 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,19 @@
 			path = TriHealthUITests;
 			sourceTree = "<group>";
 		};
+		BECA94C057022DE1067317E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DD66F67E4C4BF1B2E6D489F /* Pods-TriHealth.debug.xcconfig */,
+				974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */,
+				3F40E76478B9C3F74B630364 /* Pods-TriHealthTests.debug.xcconfig */,
+				800CAF6C1E134F49AA00CB02 /* Pods-TriHealthTests.release.xcconfig */,
+				BC343FC10343E324BDD13D21 /* Pods-TriHealthUITests.debug.xcconfig */,
+				B3191B6EEABA3B5DF54E9B27 /* Pods-TriHealthUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D7FDEF0202A34DE005537F4 /* Build configuration list for PBXNativeTarget "TriHealth" */;
 			buildPhases = (
+				78E238789CD3AA88C669EA6C /* [CP] Check Pods Manifest.lock */,
 				3D7FDEC4202A34DE005537F4 /* Sources */,
 				3D7FDEC5202A34DE005537F4 /* Frameworks */,
 				3D7FDEC6202A34DE005537F4 /* Resources */,
+				A666C0BFC448D2512E47EE16 /* [CP] Embed Pods Frameworks */,
+				99A6C7E62AE9730116AD7030 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D7FDEF3202A34DE005537F4 /* Build configuration list for PBXNativeTarget "TriHealthTests" */;
 			buildPhases = (
+				49DB61B9417634261F2F8724 /* [CP] Check Pods Manifest.lock */,
 				3D7FDED8202A34DE005537F4 /* Sources */,
 				3D7FDED9202A34DE005537F4 /* Frameworks */,
 				3D7FDEDA202A34DE005537F4 /* Resources */,
+				EBD502C0CFF6EBBBDBD6FC53 /* [CP] Embed Pods Frameworks */,
+				9ECC4A257349D88B035F8870 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D7FDEF6202A34DE005537F4 /* Build configuration list for PBXNativeTarget "TriHealthUITests" */;
 			buildPhases = (
+				26391884939E34F5764117F0 /* [CP] Check Pods Manifest.lock */,
 				3D7FDEE3202A34DE005537F4 /* Sources */,
 				3D7FDEE4202A34DE005537F4 /* Frameworks */,
 				3D7FDEE5202A34DE005537F4 /* Resources */,
+				081BD6506AA6600852D8E3B2 /* [CP] Embed Pods Frameworks */,
+				C5687E7A4D1A35F99B0DFA4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,6 +306,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		081BD6506AA6600852D8E3B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriHealthUITests/Pods-TriHealthUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26391884939E34F5764117F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TriHealthUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49DB61B9417634261F2F8724 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TriHealthTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78E238789CD3AA88C669EA6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TriHealth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99A6C7E62AE9730116AD7030 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ECC4A257349D88B035F8870 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriHealthTests/Pods-TriHealthTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A666C0BFC448D2512E47EE16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5687E7A4D1A35F99B0DFA4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriHealthUITests/Pods-TriHealthUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBD502C0CFF6EBBBDBD6FC53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriHealthTests/Pods-TriHealthTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D7FDEC4202A34DE005537F4 /* Sources */ = {
@@ -428,6 +629,7 @@
 		};
 		3D7FDEF1202A34DE005537F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DD66F67E4C4BF1B2E6D489F /* Pods-TriHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +644,7 @@
 		};
 		3D7FDEF2202A34DE005537F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +659,7 @@
 		};
 		3D7FDEF4202A34DE005537F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F40E76478B9C3F74B630364 /* Pods-TriHealthTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -472,6 +676,7 @@
 		};
 		3D7FDEF5202A34DE005537F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 800CAF6C1E134F49AA00CB02 /* Pods-TriHealthTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +693,7 @@
 		};
 		3D7FDEF7202A34DE005537F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC343FC10343E324BDD13D21 /* Pods-TriHealthUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +709,7 @@
 		};
 		3D7FDEF8202A34DE005537F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3191B6EEABA3B5DF54E9B27 /* Pods-TriHealthUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
