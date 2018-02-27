@@ -5,14 +5,12 @@
 //  Created by Lucy Ackerman on 2/6/18.
 //  Copyright © 2018 Lucy Ackerman. All rights reserved.
 //
-//LAUREN EDITED THIS THIS IS A TEST 
+//
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    //Connects XCode to Firebase account
-    let ref = FIRDatabase.database().reference(withPath: "TriHealth")
     
     @IBOutlet weak var glass1: UIImageView!
     
