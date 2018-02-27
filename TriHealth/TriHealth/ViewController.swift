@@ -5,14 +5,12 @@
 //  Created by Lucy Ackerman on 2/6/18.
 //  Copyright © 2018 Lucy Ackerman. All rights reserved.
 //
-//LAUREN EDITED THIS THIS IS A TEST 
+//
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    //Connects XCode to Firebase account
-    let ref = FIRDatabase.database().reference(withPath: "TriHealth")
     
     @IBOutlet weak var glass1: UIImageView!
     
@@ -193,7 +191,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // [START auth_listener]
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // ...
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
 
 }
 
