@@ -5,7 +5,7 @@
 //  Created by Lucy Ackerman on 2/6/18.
 //  Copyright © 2018 Lucy Ackerman. All rights reserved.
 //
-//LAUREN EDITED THIS THIS IS A TEST 
+//Lucy Edit
 
 import UIKit
 
