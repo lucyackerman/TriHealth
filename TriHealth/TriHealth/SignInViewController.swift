@@ -14,7 +14,8 @@ class SignInViewController: UIViewController {
     //variables
     let databaseref = FIRDatabase.database().reference(fromURL: "https://trihealth-d669c.firebaseio.com/")
     //outlets
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
