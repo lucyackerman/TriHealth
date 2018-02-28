@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Hydration Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Hydration Page" id="BYZ-38-t0r" customClass="ViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="1404" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In Page-->
         <scene sceneID="u0m-Hi-WAl">
             <objects>
-                <viewController id="bt1-5l-UvA" sceneMemberID="viewController">
+                <viewController title="Log In Page" id="bt1-5l-UvA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DtS-r8-mWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,10 +164,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koG-3x-RYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-708" y="711.09445277361328"/>
-</scene>
+        </scene>
+        <!--Specialized Fitness-->
         <scene sceneID="sAD-EE-fqW">
             <objects>
-                <viewController id="Iys-is-IFz" sceneMemberID="viewController">
+                <viewController title="Specialized Fitness" id="Iys-is-IFz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ab4-3B-0Yi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="804" y="-1117.6911544227887"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Sport-->
         <scene sceneID="GDK-zy-jus">
             <objects>
-                <viewController id="DqM-FV-lcW" sceneMemberID="viewController">
+                <viewController title="Choose Sport" id="DqM-FV-lcW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wfu-OA-gJe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,14 +239,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guj-MA-skB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="2266" y="-1118"/>
-
         </scene>
-        <!--View Controller-->
+        <!--Fitness Page-->
         <scene sceneID="s8f-Mb-pqK">
             <objects>
-                <viewController id="Qky-2f-2UI" sceneMemberID="viewController">
+                <viewController title="Fitness Page" id="Qky-2f-2UI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MYX-v1-6eD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="1442" y="-618"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="F3K-yK-Zrs">
             <objects>
-                <viewController id="uV8-sS-ZBL" sceneMemberID="viewController">
+                <viewController title="Profile" id="uV8-sS-ZBL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYv-gb-uUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,12 +368,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231" y="83"/>
+            <point key="canvasLocation" x="290" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--Nutrition-->
         <scene sceneID="Pzb-tI-x73">
             <objects>
-                <viewController id="8u6-WZ-cwG" sceneMemberID="viewController">
+                <viewController title="Nutrition" id="8u6-WZ-cwG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Afh-ou-a6o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -408,10 +407,10 @@
             </objects>
             <point key="canvasLocation" x="2205.5999999999999" y="536.58170914542734"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Food Type-->
         <scene sceneID="wPS-Uu-E7G">
             <objects>
-                <viewController id="grQ-KR-6V8" sceneMemberID="viewController">
+                <viewController title="Choose Food Type" id="grQ-KR-6V8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Sj-dB-R56">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,10 +431,10 @@
             </objects>
             <point key="canvasLocation" x="3038" y="482"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Screen-->
         <scene sceneID="m8C-Q0-q3r">
             <objects>
-                <viewController id="CNA-Kb-xbG" customClass="ViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home Screen" id="CNA-Kb-xbG" customClass="ViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eYk-Hi-9WO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

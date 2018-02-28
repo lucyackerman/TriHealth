@@ -15,6 +15,8 @@
 		3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */; };
 		3D7FDEE1202A34DE005537F4 /* TriHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */; };
 		3D7FDEEC202A34DE005537F4 /* TriHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */; };
+		880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E3204733EB0095DD90 /* SignInViewController.swift */; };
+		880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E5204734060095DD90 /* ProfileViewController.swift */; };
 		885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */; };
 		ECE54C9C70C3CB177909C85C /* Pods_TriHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B4DBA1417451747B89C6E1 /* Pods_TriHealthUITests.framework */; };
 		FD39901FB5C5A479E63C0BEF /* Pods_TriHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */; };
@@ -56,6 +58,8 @@
 		5DD66F67E4C4BF1B2E6D489F /* Pods-TriHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800CAF6C1E134F49AA00CB02 /* Pods-TriHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealthTests/Pods-TriHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		880E37E3204733EB0095DD90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		880E37E5204734060095DD90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.release.xcconfig"; sourceTree = "<group>"; };
 		B3191B6EEABA3B5DF54E9B27 /* Pods-TriHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealthUITests/Pods-TriHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				3D7FDECB202A34DE005537F4 /* AppDelegate.swift */,
 				3D7FDECD202A34DE005537F4 /* ViewController.swift */,
 				3D7FDECF202A34DE005537F4 /* Main.storyboard */,
+				880E37E3204733EB0095DD90 /* SignInViewController.swift */,
+				880E37E5204734060095DD90 /* ProfileViewController.swift */,
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
 				3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */,
 				3D7FDED7202A34DE005537F4 /* Info.plist */,
@@ -468,6 +474,8 @@
 			files = (
 				3D7FDECE202A34DE005537F4 /* ViewController.swift in Sources */,
 				3D7FDECC202A34DE005537F4 /* AppDelegate.swift in Sources */,
+				880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */,
+				880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
