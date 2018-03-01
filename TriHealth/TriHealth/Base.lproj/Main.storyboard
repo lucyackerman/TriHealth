@@ -508,7 +508,7 @@
         <!--Choose Food Type-->
         <scene sceneID="wPS-Uu-E7G">
             <objects>
-                <viewController title="Choose Food Type" id="grQ-KR-6V8" sceneMemberID="viewController">
+                <viewController title="Choose Food Type" id="grQ-KR-6V8" customClass="AddFoodViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Sj-dB-R56">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

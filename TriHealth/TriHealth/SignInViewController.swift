@@ -12,7 +12,7 @@ import Firebase
 class SignInViewController: UIViewController {
     
     //variables
-    let databaseref = FIRDatabase.database().reference(fromURL: "https://trihealth-d669c.firebaseio.com/")
+    //let databaseref = FIRDatabase.database().reference(fromURL: "https://trihealth-d669c.firebaseio.com/")
     //outlets
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -30,7 +30,7 @@ class SignInViewController: UIViewController {
         login()
     }
     @IBAction func signupButton(_ sender: Any) {
-        signup()
+        //signup()
     }
     
     //func
@@ -44,7 +44,7 @@ class SignInViewController: UIViewController {
             print("password issue")
             return
         }
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion)
+        //FIRAuth.auth()?.signIn(withEmail: email, password: password, completion)
     }
     func signUp()
     {
