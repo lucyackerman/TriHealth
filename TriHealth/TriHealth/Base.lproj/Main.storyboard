@@ -117,7 +117,7 @@
         <!--Log In Page-->
         <scene sceneID="u0m-Hi-WAl">
             <objects>
-                <viewController title="Log In Page" id="bt1-5l-UvA" sceneMemberID="viewController">
+                <viewController title="Log In Page" id="bt1-5l-UvA" customClass="SignInViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DtS-r8-mWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,11 @@
                         <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cMU-6l-YZC"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="v2m-i4-lJc" id="QDR-rg-7Ub"/>
+                        <outlet property="password" destination="eFI-Q7-a5J" id="x7M-Bt-hf9"/>
+                        <outlet property="username" destination="u4p-L2-Si9" id="OtX-r9-pb7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koG-3x-RYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3Ef-gX-Sgu" userLabel="Exit" sceneMemberID="exit"/>
@@ -309,7 +314,7 @@
         <!--Profile-->
         <scene sceneID="F3K-yK-Zrs">
             <objects>
-                <viewController title="Profile" id="uV8-sS-ZBL" sceneMemberID="viewController">
+                <viewController title="Profile" id="uV8-sS-ZBL" customClass="ProfielViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYv-gb-uUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
