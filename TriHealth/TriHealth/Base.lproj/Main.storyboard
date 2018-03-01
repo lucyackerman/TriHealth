@@ -159,6 +159,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="login:" destination="3Ef-gX-Sgu" eventType="touchUpInside" id="1P2-OE-3Rf"/>
+                                    <action selector="loginButton:" destination="bt1-5l-UvA" eventType="touchUpInside" id="3ow-Jg-MsC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8J-4l-mcT">
@@ -168,6 +169,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signup:" destination="3Ef-gX-Sgu" eventType="touchUpInside" id="SFo-jQ-cDd"/>
+                                    <action selector="signupButton:" destination="bt1-5l-UvA" eventType="touchUpInside" id="plK-wy-e21"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,7 +179,9 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="v2m-i4-lJc" id="QDR-rg-7Ub"/>
+                        <outlet property="loginButton" destination="eEe-2y-DhC" id="6U7-HT-qXQ"/>
                         <outlet property="password" destination="eFI-Q7-a5J" id="x7M-Bt-hf9"/>
+                        <outlet property="signupButton" destination="C8J-4l-mcT" id="oyX-We-vpr"/>
                         <outlet property="username" destination="u4p-L2-Si9" id="OtX-r9-pb7"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +26,20 @@ class SignInViewController: UIViewController {
     }
     
     //actions
+    @IBAction func loginButton(_ sender: Any) {
+        login()
+    }
+    @IBAction func signupButton(_ sender: Any) {
+        signup()
+    }
     
     //func
+    func login()
+    {
+        
+    }
+    func signUp()
+    {
+        
+    }
 }
