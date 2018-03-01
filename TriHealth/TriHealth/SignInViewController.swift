@@ -36,7 +36,15 @@ class SignInViewController: UIViewController {
     //func
     func login()
     {
-        
+        guard let email = email.text else{
+            print("email issue")
+            return
+        }
+        guard let password = password.text else{
+            print("password issue")
+            return
+        }
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion)
     }
     func signUp()
     {
