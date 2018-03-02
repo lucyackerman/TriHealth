@@ -37,6 +37,23 @@ class ViewController: UIViewController {
     @IBAction func waterAddStp(_ sender: UIStepper) {
         waterCount.text = String(sender.value)
         
+        /*let glasses = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
+        
+        if sender.value == 0
+        {
+            for glass in glasses {
+                glass?.isHidden = true;
+            }
+        }
+        
+        if sender.value == 2
+        {
+            for glass in glasses{
+                glass?.isHidden = true;
+            }
+            glass1.isHidden = false;
+        }*/
+        
         if sender.value == 0 {
             glass1.isHidden = true;
             glass2.isHidden = true;
