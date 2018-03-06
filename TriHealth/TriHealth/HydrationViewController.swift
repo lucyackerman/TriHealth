@@ -41,6 +41,14 @@ class ViewController: UIViewController {
         
         if sender.value == 0 {
             
+        let glasses = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
+ 
+        
+        for i in 1...Int(sender.value) {
+            glasses[i - 1]?.isHidden = false;
+        }
+        
+        /*if sender.value == 0 {
             glass1.isHidden = true;
             
             glass2.isHidden = true;
@@ -325,6 +333,12 @@ class ViewController: UIViewController {
             glass10.isHidden = false;
             
         }
+        }*/
+
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
         
         
     }
