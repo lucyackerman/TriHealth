@@ -8,16 +8,20 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
     
+    
     //variables
-    //let databaseref = FIRDatabase.database().reference(fromURL: "https://trihealth-d669c.firebaseio.com/")
+    let databaseref = Database.database().reference(fromURL: "https://trihealth-d669c.firebaseio.com/")
     //outlets
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +48,55 @@ class SignInViewController: UIViewController {
             print("password issue")
             return
         }
-        //FIRAuth.auth()?.signIn(withEmail: email, password: password, completion)
+        Auth.auth().signIn(withEmail:email, password:password, completion: { (user, error) in
+            if error != nil{
+                print(error!)
+                return
+            }
+            self.dismiss(animated:true, completion: nil)
+        })
     }
     func signUp()
     {
+        guard let username = username.text else{
+            print("username issue")
+            return
+        }
+        guard let email = email.text else{
+            print("email issue")
+            return
+        }
+        guard let password = password.text else{
+            print("password issue")
+            return
+        }
+        Auth.auth().createUser(withEmail:email, password:password, completion: {(user,error) in
+            if error != nil{
+                print(error!)
+                return
+            }
+            guard let uid = user?.uid else{
+                return
+            }
+            let userReference = self.databaseref.child("users").child(uid)
+            let values = ["username":username, "email":email]
+            
+            userReference.updateChildValues(values, withCompletionBlock: {error, ref in
+                if error != nil{
+                    print(error!)
+                    return
+                }
+                self.dismiss(animated: true, completion: nil)
+            })
+        })
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            return
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
 }
