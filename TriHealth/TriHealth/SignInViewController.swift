@@ -11,11 +11,11 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController{
     
     
     //variables
-    let databaseref = Database.database().reference(fromURL: "https://trihealth-d669c.firebaseio.com/")
+    let databaseref = Database.database().reference()
     //outlets
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -25,7 +25,6 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -34,7 +33,7 @@ class SignInViewController: UIViewController {
         login()
     }
     @IBAction func signupButton(_ sender: Any) {
-        //signup()
+        signUp()
     }
     
     //func
