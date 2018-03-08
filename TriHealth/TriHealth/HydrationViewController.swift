@@ -273,7 +273,7 @@ class ViewController: UIViewController {
             glass6.isHidden = false;
             
             glass7.isHidden = false;
-            
+     /Users/Tembi/Desktop/12th/CS 5/Git Repository/TriHealth/TriHealth/Info.plist
             glass8.isHidden = false;
             
             glass9.isHidden = true;
@@ -336,7 +336,7 @@ class ViewController: UIViewController {
         }*/
 
     }
-    override func viewDidLoad() {
+    func viewDidLoad() {
         super.viewDidLoad()
     }
         
