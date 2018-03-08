@@ -10,8 +10,18 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 class ProfileViewController: UIViewController {
 
+class ProfielViewController: UIViewController {
+    
+    @IBOutlet weak var stepper: UIStepper!
+
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    @IBOutlet weak var weightInput: UITextField!
+    
+    var cupMeasure = 0
     //variables
     
     //outlets

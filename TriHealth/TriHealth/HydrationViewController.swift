@@ -12,6 +12,7 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    
     @IBOutlet weak var glass1: UIImageView!
     
     @IBOutlet weak var glass2: UIImageView!
@@ -33,6 +34,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var glass10: UIImageView!
     
     @IBOutlet weak var waterCount: UILabel!
+    
+    @IBOutlet weak var waterStepper: UIStepper!
     
     let  glassArray = ["glass1", "glass2", "glass3", "glass4", "glass5", "glass6", "glass7", "glass8", "glass9", "glass10"]
 
@@ -273,7 +276,7 @@ class ViewController: UIViewController {
             glass6.isHidden = false;
             
             glass7.isHidden = false;
-            
+     /Users/Tembi/Desktop/12th/CS 5/Git Repository/TriHealth/TriHealth/Info.plist
             glass8.isHidden = false;
             
             glass9.isHidden = true;
@@ -336,7 +339,8 @@ class ViewController: UIViewController {
         }*/
 
     }
-        func viewDidLoad() {
+
+    func viewDidLoad() {
         super.viewDidLoad()
     }
         
