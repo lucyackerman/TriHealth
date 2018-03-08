@@ -391,7 +391,7 @@
         <!--Profile-->
         <scene sceneID="F3K-yK-Zrs">
             <objects>
-                <viewController title="Profile" id="uV8-sS-ZBL" customClass="ProfielViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="uV8-sS-ZBL" customClass="ProfileViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYv-gb-uUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

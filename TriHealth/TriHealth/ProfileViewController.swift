@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
-class ProfielViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     //variables
     
@@ -19,7 +20,7 @@ class ProfielViewController: UIViewController {
     @IBOutlet weak var weight: UILabel!
     var cupMeasure = 0;
     
-    //actions
+    //actionsg
     
     //functions
     func waterWeight(weightInput: Int) -> Int{
@@ -29,6 +30,10 @@ class ProfielViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    if Auth.auth()?.currentUser?.uid ==nil{
+        logout()
     }
 
 }
