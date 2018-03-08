@@ -92,6 +92,14 @@
                                 <rect key="frame" x="149" y="165" width="78" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-IJ-nzk">
+                                <rect key="frame" x="12" y="20" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile Page"/>
+                                <connections>
+                                    <segue destination="uV8-sS-ZBL" kind="show" identifier="Hyrdo-Profile" id="vx6-jD-nqU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -107,12 +115,14 @@
                         <outlet property="glass7" destination="4ml-bt-UF8" id="RWP-b6-smv"/>
                         <outlet property="glass8" destination="dyA-kO-PKg" id="TIl-hf-QLj"/>
                         <outlet property="glass9" destination="hxB-cP-kMB" id="fT3-ve-5dN"/>
+                        <outlet property="stepper" destination="0ix-T1-QXA" id="ayZ-Yh-paD"/>
                         <outlet property="waterCount" destination="Xno-P8-NXU" id="n2a-zc-igx"/>
+                        <outlet property="waterStepper" destination="0ix-T1-QXA" id="UwX-wQ-7Yl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="32"/>
+            <point key="canvasLocation" x="1404" y="31.934032983508249"/>
         </scene>
         <!--Log In Page-->
         <scene sceneID="u0m-Hi-WAl">
@@ -448,6 +458,10 @@
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JH2-QX-LhX">
+                                <rect key="frame" x="32" y="273" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZO5-4w-sib"/>
@@ -455,6 +469,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="progressBar" destination="JH2-QX-LhX" id="zzm-h0-HGr"/>
                         <outlet property="weightInput" destination="X2H-mI-v8g" id="A7e-LD-zYw"/>
                     </connections>
                 </viewController>

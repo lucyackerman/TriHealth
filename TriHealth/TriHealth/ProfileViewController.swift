@@ -9,10 +9,14 @@
 import UIKit
 
 class ProfielViewController: UIViewController {
+    
+    @IBOutlet weak var stepper: UIStepper!
 
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     @IBOutlet weak var weightInput: UITextField!
     
-    var cupMeasure = 0;
+    var cupMeasure = 0
     
     func waterWeight(weightInput: Int) -> Int{
         cupMeasure = (weightInput/20)
