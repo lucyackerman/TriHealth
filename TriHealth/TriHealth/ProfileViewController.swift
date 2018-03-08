@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfielViewController: UIViewController {
 
-    @IBOutlet weak var weightInput: UITextField!
+    //variables
     
+    //outlets
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var weight: UILabel!
     var cupMeasure = 0;
     
+    //actions
+    
+    //functions
     func waterWeight(weightInput: Int) -> Int{
         cupMeasure = (weightInput/20)
         
@@ -21,8 +29,6 @@ class ProfielViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
 }

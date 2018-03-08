@@ -336,7 +336,7 @@ class ViewController: UIViewController {
         }*/
 
     }
-    override func viewDidLoad() {
+        func viewDidLoad() {
         super.viewDidLoad()
     }
         
