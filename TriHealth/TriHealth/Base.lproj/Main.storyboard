@@ -459,14 +459,9 @@
                     <navigationItem key="navigationItem" id="xb3-9Z-EQS"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-
-                        <outlet property="progressBar" destination="JH2-QX-LhX" id="zzm-h0-HGr"/>
-                        <outlet property="weightInput" destination="X2H-mI-v8g" id="A7e-LD-zYw"/>
-
                         <outlet property="email" destination="2eW-I1-I3g" id="COs-AG-vbh"/>
                         <outlet property="username" destination="7Sp-qB-4rG" id="MsQ-j9-A5s"/>
                         <outlet property="weight" destination="cxy-mD-r5W" id="PSF-Hj-Oqi"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -16536,4 +16531,7 @@ ogAOm6UADpuqAA6bsgAOm7UADpvHAA6bygAOm88AAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAAA6b
 </mutableData>
         </image>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hhm-XV-lxL"/>
+    </inferredMetricsTieBreakers>
 </document>

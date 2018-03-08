@@ -24,7 +24,6 @@ class ProfielViewController: UIViewController {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var weight: UILabel!
-    var cupMeasure = 0;
     
     //actions
     
