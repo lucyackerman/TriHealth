@@ -34,6 +34,9 @@ class ProfileViewController: UIViewController {
         if Auth.auth().currentUser?.uid == nil{
             self.logout()
         }
+        else{
+            email.text = Auth.auth().currentUser?.email
+        }
     }
     func logout(){
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
