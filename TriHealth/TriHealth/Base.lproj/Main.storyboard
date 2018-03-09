@@ -127,7 +127,7 @@
         <!--Log In Page-->
         <scene sceneID="u0m-Hi-WAl">
             <objects>
-                <viewController title="Log In Page" id="bt1-5l-UvA" customClass="SignInViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signin" title="Log In Page" id="bt1-5l-UvA" customClass="SignInViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DtS-r8-mWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +208,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="signin"/>
                         <viewLayoutGuide key="safeArea" id="cMU-6l-YZC"/>
                     </view>
                     <connections>
@@ -459,9 +460,9 @@
                     <navigationItem key="navigationItem" id="xb3-9Z-EQS"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="email" destination="2eW-I1-I3g" id="COs-AG-vbh"/>
-                        <outlet property="username" destination="7Sp-qB-4rG" id="MsQ-j9-A5s"/>
-                        <outlet property="weight" destination="cxy-mD-r5W" id="PSF-Hj-Oqi"/>
+                        <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
+                        <outlet property="username" destination="7Sp-qB-4rG" id="1V2-qt-bGP"/>
+                        <outlet property="weight" destination="cxy-mD-r5W" id="aSc-In-TXD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -16532,8 +16533,6 @@ ogAOm6UADpuqAA6bsgAOm7UADpvHAA6bygAOm88AAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAAA6b
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-
         <segue reference="vx6-jD-nqU"/>
-
     </inferredMetricsTieBreakers>
 </document>

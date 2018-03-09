@@ -10,26 +10,17 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-
 class ProfileViewController: UIViewController {
-
-class ProfielViewController: UIViewController {
     
-    @IBOutlet weak var stepper: UIStepper!
-
-    @IBOutlet weak var progressBar: UIProgressView!
-    
-    @IBOutlet weak var weightInput: UITextField!
-    
+        //variables
     var cupMeasure = 0
-    //variables
     
     //outlets
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var weight: UILabel!
     
-    //actionsg
+    //actions
     
     //functions
     func waterWeight(weightInput: Int) -> Int{
@@ -39,10 +30,14 @@ class ProfielViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Auth.auth().currentUser?.uid == nil{
+            self.logout()
+        }
     }
-    
-    if Auth.auth()?.currentUser?.uid ==nil{
-        logout()
+    func logout(){
+        let storyboard = UIStoryboard(name:"Main",bundle:nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
+        present(loginViewController, animated: true, completion: nil)
     }
-
 }
