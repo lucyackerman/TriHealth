@@ -11,8 +11,13 @@ import Firebase
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    //HydrationButton Segue
+    @IBAction func HydrationButton(_ sender: Any)
+    {
+        performSegue(withIdentifier: "HydrationButton", sender: self)
+    }
     
-        //variables
+    //variables
     var cupMeasure = 0
     
     //outlets

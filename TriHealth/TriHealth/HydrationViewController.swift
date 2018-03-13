@@ -11,6 +11,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBAction func profilePageBack(_ sender: UIButton)
+    {
+        performSegue(withIdentifier: "profilePageBack", sender: self)
+    }
     
     
     @IBOutlet weak var glass1: UIImageView!

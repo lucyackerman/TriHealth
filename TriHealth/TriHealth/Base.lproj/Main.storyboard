@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ix-T1-QXA">
-                                <rect key="frame" x="140" y="604" width="94" height="29"/>
+                                <rect key="frame" x="141" y="593" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="waterAddStp:" destination="BYZ-38-t0r" eventType="valueChanged" id="a8a-Wf-4Tq"/>
@@ -97,7 +97,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Profile Page"/>
                                 <connections>
-                                    <segue destination="uV8-sS-ZBL" kind="show" identifier="Hyrdo-Profile" id="vx6-jD-nqU"/>
+                                    <action selector="profilePageBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A29-gk-f7U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,6 +118,7 @@
                         <outlet property="stepper" destination="0ix-T1-QXA" id="ayZ-Yh-paD"/>
                         <outlet property="waterCount" destination="Xno-P8-NXU" id="n2a-zc-igx"/>
                         <outlet property="waterStepper" destination="0ix-T1-QXA" id="UwX-wQ-7Yl"/>
+                        <segue destination="uV8-sS-ZBL" kind="show" identifier="profilePageBack" id="WA6-x0-d31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -414,6 +415,9 @@
                                 <state key="normal" title="Hydration" backgroundImage="glassComplete">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="HydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="EXw-PN-qz2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sp-qB-4rG">
                                 <rect key="frame" x="16" y="118" width="343" height="30"/>
@@ -463,6 +467,7 @@
                         <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
                         <outlet property="username" destination="7Sp-qB-4rG" id="1V2-qt-bGP"/>
                         <outlet property="weight" destination="cxy-mD-r5W" id="aSc-In-TXD"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="HydrationButton" id="x76-y9-9LV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -16533,6 +16538,6 @@ ogAOm6UADpuqAA6bsgAOm7UADpvHAA6bygAOm88AAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAAA6b
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vx6-jD-nqU"/>
+        <segue reference="WA6-x0-d31"/>
     </inferredMetricsTieBreakers>
 </document>
