@@ -18,13 +18,14 @@
         <!--Hydration Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Hydration Page" id="BYZ-38-t0r" sceneMemberID="viewController">
+               <viewController title="Hydration Page" id="BYZ-38-t0r" customClass="HydrationPageViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ix-T1-QXA">
-                                <rect key="frame" x="140" y="604" width="94" height="29"/>
+                                <rect key="frame" x="141" y="593" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="waterAddStp:" destination="BYZ-38-t0r" eventType="valueChanged" id="a8a-Wf-4Tq"/>
@@ -97,7 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Profile Page"/>
                                 <connections>
-                                    <segue destination="uV8-sS-ZBL" kind="show" identifier="Hyrdo-Profile" id="vx6-jD-nqU"/>
+                                    <action selector="profilePageBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A29-gk-f7U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,7 +118,9 @@
                         <outlet property="glass9" destination="hxB-cP-kMB" id="fT3-ve-5dN"/>
                         <outlet property="stepper" destination="0ix-T1-QXA" id="ayZ-Yh-paD"/>
                         <outlet property="waterCount" destination="Xno-P8-NXU" id="n2a-zc-igx"/>
+                        <outlet property="waterNeeded" destination="Xno-P8-NXU" id="1Ny-C6-fjQ"/>
                         <outlet property="waterStepper" destination="0ix-T1-QXA" id="UwX-wQ-7Yl"/>
+                        <segue destination="uV8-sS-ZBL" kind="show" identifier="profilePageBack" id="WA6-x0-d31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -419,6 +422,9 @@
                                 <state key="normal" title="Hydration" backgroundImage="glassComplete">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="HydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="EXw-PN-qz2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="usernameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sp-qB-4rG">
                                 <rect key="frame" x="16" y="149" width="343" height="30"/>
@@ -468,6 +474,16 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hb-AH-2Ms">
+                                <rect key="frame" x="133" y="344" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="weightButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="aqb-t1-bGs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -16554,6 +16570,7 @@ ogAOm6UADpuqAA6bsgAOm7UADpvHAA6bygAOm88AAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAAA6b
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vx6-jD-nqU"/>
+        <segue reference="x76-y9-9LV"/>
+        <segue reference="WA6-x0-d31"/>
     </inferredMetricsTieBreakers>
 </document>

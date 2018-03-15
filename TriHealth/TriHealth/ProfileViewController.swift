@@ -13,6 +13,25 @@ import FirebaseStorage
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var weightText: UILabel!
+    
+    @IBAction func weightButton(_ sender: Any) {
+        if weightText.text != ""
+        {
+            performSegue(withIdentifier: "HydrationButton", sender: <#T##Any?#>)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let weightData =  segue.destination as! HydrationPageViewController
+        weightData.userWeight = weightText.text!
+    }
+    //HydrationButton Segue
+    @IBAction func HydrationButton(_ sender: Any)
+    {
+        performSegue(withIdentifier: "HydrationButton", sender: self)
+    }
+
     //variables
     var cupMeasure = 0
     let storageref = Storage.storage().reference()

@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		265326811BB38FF9618BC3B2 /* Pods_TriHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FEEE7D8591F64E55D46CF1 /* Pods_TriHealth.framework */; };
+		3D4DFCD1205A31AD0018E17E /* HydrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */; };
 		3D7FDECC202A34DE005537F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDECB202A34DE005537F4 /* AppDelegate.swift */; };
 		3D7FDECE202A34DE005537F4 /* HydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDECD202A34DE005537F4 /* HydrationViewController.swift */; };
 		3D7FDED1202A34DE005537F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDECF202A34DE005537F4 /* Main.storyboard */; };
 		3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDED2202A34DE005537F4 /* Assets.xcassets */; };
 		3D7FDEE1202A34DE005537F4 /* TriHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */; };
 		3D7FDEEC202A34DE005537F4 /* TriHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */; };
+		3D8F3FBF2053113000D0020E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F3FBE2053113000D0020E /* Default-568h@2x.png */; };
+		3DCA048A20531A6E00BBA90A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DCA048920531A6E00BBA90A /* GoogleService-Info.plist */; };
 		880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E3204733EB0095DD90 /* SignInViewController.swift */; };
 		880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E5204734060095DD90 /* ProfileViewController.swift */; };
-		885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */; };
 		A3CBDEBA2048712E006D4AB4 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */; };
 		A3CBDEBC2051B4F8006D4AB4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CBDEBB2051B4F8006D4AB4 /* Info.plist */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationPageViewController.swift; sourceTree = "<group>"; };
 		3D7FDEC8202A34DE005537F4 /* TriHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7FDECB202A34DE005537F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7FDECD202A34DE005537F4 /* HydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationViewController.swift; sourceTree = "<group>"; };
@@ -50,12 +53,13 @@
 		3D7FDEE7202A34DE005537F4 /* TriHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriHealthUITests.swift; sourceTree = "<group>"; };
 		3D7FDEED202A34DE005537F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D8F3FBE2053113000D0020E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3DCA048920531A6E00BBA90A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46B4DBA1417451747B89C6E1 /* Pods_TriHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD66F67E4C4BF1B2E6D489F /* Pods-TriHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880E37E3204733EB0095DD90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		880E37E5204734060095DD90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.release.xcconfig"; sourceTree = "<group>"; };
 		A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		A3CBDEBB2051B4F8006D4AB4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		3D7FDEBF202A34DD005537F4 = {
 			isa = PBXGroup;
 			children = (
+				3D8F3FBE2053113000D0020E /* Default-568h@2x.png */,
 				3D7FDECA202A34DE005537F4 /* TriHealth */,
 				3D7FDEDF202A34DE005537F4 /* TriHealthTests */,
 				3D7FDEEA202A34DE005537F4 /* TriHealthUITests */,
@@ -126,12 +131,13 @@
 				3D7FDECB202A34DE005537F4 /* AppDelegate.swift */,
 				3D7FDECD202A34DE005537F4 /* HydrationViewController.swift */,
 				3D7FDECF202A34DE005537F4 /* Main.storyboard */,
+				3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */,
 				A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */,
 				880E37E3204733EB0095DD90 /* SignInViewController.swift */,
 				880E37E5204734060095DD90 /* ProfileViewController.swift */,
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
 				A3CBDEBB2051B4F8006D4AB4 /* Info.plist */,
-				885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */,
+				3DCA048920531A6E00BBA90A /* GoogleService-Info.plist */,
 			);
 			path = TriHealth;
 			sourceTree = "<group>";
@@ -273,10 +279,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */,
+=======
+				3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */,
+>>>>>>> b0ea8a44b9dac821b228b0791e8ebdf27331142c
 				A3CBDEBC2051B4F8006D4AB4 /* Info.plist in Resources */,
 				3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */,
 				3D7FDED1202A34DE005537F4 /* Main.storyboard in Resources */,
+				3D8F3FBF2053113000D0020E /* Default-568h@2x.png in Resources */,
+				3DCA048A20531A6E00BBA90A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4DFCD1205A31AD0018E17E /* HydrationPageViewController.swift in Sources */,
 				A3CBDEBA2048712E006D4AB4 /* AddFoodViewController.swift in Sources */,
 				3D7FDECE202A34DE005537F4 /* HydrationViewController.swift in Sources */,
 				3D7FDECC202A34DE005537F4 /* AppDelegate.swift in Sources */,
@@ -525,7 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/../../../Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TriHealth/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lakeisdeCS.TriHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,7 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/../../../Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TriHealth/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lakeisdeCS.TriHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
