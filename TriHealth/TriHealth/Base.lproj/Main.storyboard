@@ -18,7 +18,7 @@
         <!--Hydration Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Hydration Page" id="BYZ-38-t0r" customClass="ViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Hydration Page" id="BYZ-38-t0r" customClass="HydrationPageViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,6 +117,7 @@
                         <outlet property="glass9" destination="hxB-cP-kMB" id="fT3-ve-5dN"/>
                         <outlet property="stepper" destination="0ix-T1-QXA" id="ayZ-Yh-paD"/>
                         <outlet property="waterCount" destination="Xno-P8-NXU" id="n2a-zc-igx"/>
+                        <outlet property="waterNeeded" destination="Xno-P8-NXU" id="1Ny-C6-fjQ"/>
                         <outlet property="waterStepper" destination="0ix-T1-QXA" id="UwX-wQ-7Yl"/>
                         <segue destination="uV8-sS-ZBL" kind="show" identifier="profilePageBack" id="WA6-x0-d31"/>
                     </connections>
@@ -456,6 +457,16 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hb-AH-2Ms">
+                                <rect key="frame" x="133" y="344" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="weightButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="aqb-t1-bGs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZO5-4w-sib"/>
@@ -467,12 +478,13 @@
                         <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
                         <outlet property="username" destination="7Sp-qB-4rG" id="1V2-qt-bGP"/>
                         <outlet property="weight" destination="cxy-mD-r5W" id="aSc-In-TXD"/>
+                        <outlet property="weightText" destination="cxy-mD-r5W" id="hMy-vU-0Y5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="HydrationButton" id="x76-y9-9LV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="695"/>
+            <point key="canvasLocation" x="893.60000000000002" y="694.90254872563719"/>
         </scene>
         <!--Nutrition-->
         <scene sceneID="Pzb-tI-x73">
@@ -16538,6 +16550,7 @@ ogAOm6UADpuqAA6bsgAOm7UADpvHAA6bygAOm88AAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAAA6b
         </image>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="x76-y9-9LV"/>
         <segue reference="WA6-x0-d31"/>
     </inferredMetricsTieBreakers>
 </document>
