@@ -17,6 +17,68 @@
             endingLineNumber = "39"
             landmarkName = "ViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "variable initialization expression of TriHealth.ViewController.glassArray : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "TriHealth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucyackerman/Desktop/Computer%20Science%20/CS5/Git%20Repository/TriHealth/TriHealth/HydrationViewController.swift"
+                  timestampString = "542657072.775751"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriHealth.ViewController.glassArray.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "TriHealth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucyackerman/Desktop/Computer%20Science%20/CS5/Git%20Repository/TriHealth/TriHealth/HydrationViewController.swift"
+                  timestampString = "542657072.780746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriHealth.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TriHealth.ViewController"
+                  moduleName = "TriHealth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucyackerman/Desktop/Computer%20Science%20/CS5/Git%20Repository/TriHealth/TriHealth/HydrationViewController.swift"
+                  timestampString = "542657072.786136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1580">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriHealth.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;TriHealth.ViewController&gt;"
+                  moduleName = "TriHealth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucyackerman/Desktop/Computer%20Science%20/CS5/Git%20Repository/TriHealth/TriHealth/HydrationViewController.swift"
+                  timestampString = "542657072.792008"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1447">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

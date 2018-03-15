@@ -9,33 +9,68 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
     
-        //variables
+    @IBOutlet weak var weightText: UILabel!
+    
+    @IBAction func weightButton(_ sender: Any) {
+        if weightText.text != ""
+        {
+            performSegue(withIdentifier: "HydrationButton", sender: <#T##Any?#>)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let weightData =  segue.destination as! HydrationPageViewController
+        weightData.userWeight = weightText.text!
+    }
+    //HydrationButton Segue
+    @IBAction func HydrationButton(_ sender: Any)
+    {
+        performSegue(withIdentifier: "HydrationButton", sender: self)
+    }
+
+    //variables
     var cupMeasure = 0
+    let storageref = Storage.storage().reference()
+    let databaseref = Database.database().reference()
     
     //outlets
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
     
     //actions
+    @IBAction func logout(_ sender: Any) {
+        logout()
+    }
     
     //functions
-    func waterWeight(weightInput: Int) -> Int{
+    /*func waterWeight(weightInput: Int) -> Int{
         cupMeasure = (weightInput/20)
         
         return cupMeasure
-    }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if Auth.auth().currentUser?.uid == nil{
+        let uid = Auth.auth().currentUser?.uid
+        if uid == nil{
             self.logout()
         }
         else{
-            email.text = Auth.auth().currentUser?.email
+            databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+            in
+                if let dict = snapshot.value as? [String: AnyObject]
+            {
+                self.email.text = dict["email"] as? String
+                self.usernameLabel.text = dict["username"] as? String
+                if let userWeight = dict["weight"] as? String
+                {
+                    self.weightLabel.text = userWeight
+                }
+            }})
         }
     }
     func logout(){

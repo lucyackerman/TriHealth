@@ -134,8 +134,7 @@
 				3D7FDECD202A34DE005537F4 /* HydrationViewController.swift */,
 				3D7FDECF202A34DE005537F4 /* Main.storyboard */,
 				3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */,
-				A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */,
-				880E37E3204733EB0095DD90 /* SignInViewController.swift */,
+				A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */				880E37E3204733EB0095DD90 /* SignInViewController.swift */,
 				880E37E5204734060095DD90 /* ProfileViewController.swift */,
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
 				A3CBDEBB2051B4F8006D4AB4 /* Info.plist */,
@@ -679,4 +678,5 @@
 /* End XCConfigurationList section */
 	};
 	rootObject = 3D7FDEC0202A34DD005537F4 /* Project object */;
-}
+}:q
+
