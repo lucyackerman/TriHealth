@@ -12,7 +12,6 @@
 		3D7FDECE202A34DE005537F4 /* HydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDECD202A34DE005537F4 /* HydrationViewController.swift */; };
 		3D7FDED1202A34DE005537F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDECF202A34DE005537F4 /* Main.storyboard */; };
 		3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDED2202A34DE005537F4 /* Assets.xcassets */; };
-		3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */; };
 		3D7FDEE1202A34DE005537F4 /* TriHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */; };
 		3D7FDEEC202A34DE005537F4 /* TriHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */; };
 		880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E3204733EB0095DD90 /* SignInViewController.swift */; };
@@ -45,7 +44,6 @@
 		3D7FDECD202A34DE005537F4 /* HydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationViewController.swift; sourceTree = "<group>"; };
 		3D7FDED0202A34DE005537F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D7FDED2202A34DE005537F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3D7FDED5202A34DE005537F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D7FDEDC202A34DE005537F4 /* TriHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriHealthTests.swift; sourceTree = "<group>"; };
 		3D7FDEE2202A34DE005537F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				880E37E3204733EB0095DD90 /* SignInViewController.swift */,
 				880E37E5204734060095DD90 /* ProfileViewController.swift */,
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
-				3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */,
 				A3CBDEBB2051B4F8006D4AB4 /* Info.plist */,
 				885A880C2035FE4200F6EE9A /* GoogleService-Info.plist */,
 			);
@@ -276,7 +273,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */,
 				885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */,
 				A3CBDEBC2051B4F8006D4AB4 /* Info.plist in Resources */,
 				3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */,
@@ -411,14 +407,6 @@
 				3D7FDED0202A34DE005537F4 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3D7FDED4202A34DE005537F4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D7FDED5202A34DE005537F4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
