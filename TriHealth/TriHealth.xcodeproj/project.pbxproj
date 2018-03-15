@@ -279,11 +279,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				885A880D2035FE4200F6EE9A /* GoogleService-Info.plist in Resources */,
-=======
 				3D7FDED6202A34DE005537F4 /* LaunchScreen.storyboard in Resources */,
->>>>>>> b0ea8a44b9dac821b228b0791e8ebdf27331142c
 				A3CBDEBC2051B4F8006D4AB4 /* Info.plist in Resources */,
 				3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */,
 				3D7FDED1202A34DE005537F4 /* Main.storyboard in Resources */,
