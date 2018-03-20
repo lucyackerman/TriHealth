@@ -5,7 +5,8 @@
 //  Created by Lucy Ackerman on 2/6/18.
 //  Copyright © 2018 Lucy Ackerman. All rights reserved.
 //
-
+import Firebase
+import FirebaseAuth
 import XCTest
 @testable import TriHealth
 
