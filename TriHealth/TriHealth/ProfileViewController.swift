@@ -23,15 +23,13 @@ class ProfileViewController: UIViewController {
         }
     }*/
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let weightData =  segue.destination as! HydrationPageViewController
-        weightData.userWeight = weightText.text!
-    }
-    //HydrationButton Segue
-    @IBAction func HydrationButton(_ sender: Any)
-    {
-        performSegue(withIdentifier: "HydrationButton", sender: self)
-    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let weightData =  segue.destination as! HydrationPageViewController
+//        weightData.userWeight = weightText.text!
+//    }
+
 
     //variables
     var cupMeasure = 0
