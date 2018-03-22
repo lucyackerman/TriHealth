@@ -98,6 +98,7 @@
                                 <state key="normal" title="Profile Page"/>
                                 <connections>
                                     <action selector="profilePageBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A29-gk-f7U"/>
+                                    <segue destination="uV8-sS-ZBL" kind="show" id="la5-57-ohU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -457,20 +458,6 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hND-FT-oaU">
-                                <rect key="frame" x="128" y="492" width="118" height="97.999999999999773"/>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                <state key="normal" title="Hydration" backgroundImage="glassComplete">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ZO5-4w-sib" firstAttribute="trailing" secondItem="hND-FT-oaU" secondAttribute="trailing" constant="129.37" id="CD5-QK-buE"/>
-                            <constraint firstItem="hND-FT-oaU" firstAttribute="leading" secondItem="ZO5-4w-sib" secondAttribute="leading" constant="127.63" id="XB4-sY-Hhj"/>
-                            <constraint firstItem="hND-FT-oaU" firstAttribute="top" secondItem="cxy-mD-r5W" secondAttribute="bottom" constant="300" id="ngU-t0-kwP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZO5-4w-sib"/>
                     </view>
                     <toolbarItems/>
