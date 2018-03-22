@@ -15,7 +15,7 @@ import FirebaseDatabase
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var weightText: UILabel!
-    
+    @IBOutlet weak var HydrationButton: UIButton!
     /*@IBAction func weightButton(_ sender: Any) {
         if weightText.text != ""
         {

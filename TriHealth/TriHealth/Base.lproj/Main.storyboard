@@ -19,7 +19,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Hydration Page" id="BYZ-38-t0r" customClass="HydrationPageViewController" customModule="TriHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="HydrationPageViewController" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -98,30 +98,12 @@
                                 <state key="normal" title="Profile Page"/>
                                 <connections>
                                     <action selector="profilePageBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A29-gk-f7U"/>
-                                    <segue destination="uV8-sS-ZBL" kind="show" id="la5-57-ohU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="glass1" destination="Asa-Vk-hAG" id="5Sa-1C-GNb"/>
-                        <outlet property="glass10" destination="OEf-s1-F3D" id="59P-BN-Xmw"/>
-                        <outlet property="glass2" destination="LKx-TX-JPe" id="Mpy-Nx-Ktt"/>
-                        <outlet property="glass3" destination="TPY-0O-Foz" id="Rty-YN-QFL"/>
-                        <outlet property="glass4" destination="P9I-TZ-5IB" id="6km-XZ-Ws6"/>
-                        <outlet property="glass5" destination="yny-6U-MIH" id="wWL-2v-ckw"/>
-                        <outlet property="glass6" destination="4J1-s2-CWx" id="Wqz-hO-Sym"/>
-                        <outlet property="glass7" destination="4ml-bt-UF8" id="RWP-b6-smv"/>
-                        <outlet property="glass8" destination="dyA-kO-PKg" id="TIl-hf-QLj"/>
-                        <outlet property="glass9" destination="hxB-cP-kMB" id="fT3-ve-5dN"/>
-                        <outlet property="stepper" destination="0ix-T1-QXA" id="ayZ-Yh-paD"/>
-                        <outlet property="waterCount" destination="Xno-P8-NXU" id="n2a-zc-igx"/>
-                        <outlet property="waterNeeded" destination="Xno-P8-NXU" id="1Ny-C6-fjQ"/>
-                        <outlet property="waterStepper" destination="0ix-T1-QXA" id="UwX-wQ-7Yl"/>
-                        <segue destination="uV8-sS-ZBL" kind="show" identifier="profilePageBack" id="WA6-x0-d31"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -407,7 +389,7 @@
         <scene sceneID="F3K-yK-Zrs">
             <objects>
                 <viewController title="Profile" id="uV8-sS-ZBL" customClass="ProfileViewController" customModule="TriHealth" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gYv-gb-uUn">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ProfileViewController" id="gYv-gb-uUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -460,6 +442,21 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-LZ-nii">
+                                <rect key="frame" x="113" y="434" width="149" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="glassComplete"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="BsR-g1-RS8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hydration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P83-Nz-NXC">
+                                <rect key="frame" x="150" y="485" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZO5-4w-sib"/>
@@ -468,6 +465,7 @@
                     <navigationItem key="navigationItem" id="xb3-9Z-EQS"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="HydrationButton" destination="rvi-LZ-nii" id="WkR-4S-XiA"/>
                         <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
                         <outlet property="usernameLabel" destination="7Sp-qB-4rG" id="jCo-6K-jlj"/>
                         <outlet property="weightLabel" destination="cxy-mD-r5W" id="9cU-J7-NW9"/>
@@ -573,6 +571,6 @@
         <image name="glassComplete" width="638" height="734"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WA6-x0-d31"/>
+        <segue reference="Hhm-XV-lxL"/>
     </inferredMetricsTieBreakers>
 </document>
