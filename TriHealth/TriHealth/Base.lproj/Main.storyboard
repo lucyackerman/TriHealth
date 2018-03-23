@@ -92,14 +92,6 @@
                                 <rect key="frame" x="149" y="165" width="78" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-IJ-nzk">
-                                <rect key="frame" x="12" y="20" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profile Page"/>
-                                <connections>
-                                    <action selector="profilePageBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A29-gk-f7U"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -400,13 +392,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="weight text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxy-mD-r5W">
-                                <rect key="frame" x="84" y="277" width="275" height="30"/>
-                                <color key="backgroundColor" red="0.58772798739999998" green="0.88600380899999998" blue="0.90888911490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtN-H6-9Xg">
                                 <rect key="frame" x="16" y="221" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -440,7 +425,6 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-LZ-nii">
                                 <rect key="frame" x="113" y="434" width="149" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -456,10 +440,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLT-Gi-g10">
+                                <rect key="frame" x="78" y="277" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHh-zS-b2Q">
+                                <rect key="frame" x="194" y="278" width="75" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="SET">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="setWeight:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="F0z-tE-1Df"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-=======
->>>>>>> 7314f02e9ba9748436b3a2471fb0d915abb2d563
                         <viewLayoutGuide key="safeArea" id="ZO5-4w-sib"/>
                     </view>
                     <toolbarItems/>
@@ -469,7 +469,8 @@
                         <outlet property="HydrationButton" destination="rvi-LZ-nii" id="WkR-4S-XiA"/>
                         <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
                         <outlet property="usernameLabel" destination="7Sp-qB-4rG" id="jCo-6K-jlj"/>
-                        <outlet property="weightLabel" destination="cxy-mD-r5W" id="9cU-J7-NW9"/>
+                        <outlet property="weightText" destination="gLT-Gi-g10" id="B38-9s-feh"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ToHydrationSegue" id="7N2-ZL-OMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -572,6 +573,7 @@
         <image name="glassComplete" width="638" height="734"/>
     </resources>
     <inferredMetricsTieBreakers>
-7314f02e9ba9748436b3a2471fb0d915abb2d563
+        <segue reference="Hhm-XV-lxL"/>
+        <segue reference="7N2-ZL-OMx"/>
     </inferredMetricsTieBreakers>
 </document>

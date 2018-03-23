@@ -10,18 +10,18 @@ import UIKit
 
 class HydrationPageViewController: UIViewController {
 
-//    @IBOutlet weak var waterNeeded: UILabel!
-//
-//    var userWeight = String()
-//
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        waterNeeded.text = userWeight
+    @IBOutlet weak var waterNeeded: UILabel!
 
-        // Do any additional setup after loading the view.
-    }
+    var userWeight = String()
+
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        waterNeeded.text = userWeight
+//
+//        // Do any additional setup after loading the view.
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,13 +39,7 @@ class HydrationPageViewController: UIViewController {
     }
     */
 
-//
-//    @IBAction func profilePageBack(_ sender: UIButton)
-//    {
-//        performSegue(withIdentifier: "profilePageBack", sender: self)
-//    }
-//
-//
+
 //    @IBOutlet weak var glass1: UIImageView!
 //
 //    @IBOutlet weak var glass2: UIImageView!
