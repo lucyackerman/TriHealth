@@ -14,15 +14,15 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var weightText: UILabel!
+    @IBOutlet weak var HydrationButton: UIButton!
+    @IBOutlet weak var weightText: UITextField!
     
-    /*@IBAction func weightButton(_ sender: Any) {
-        if weightText.text != ""
-        {
-            performSegue(withIdentifier: "HydrationButton", sender: <#T##Any?#>)
-        }
-    }*/
-    
+//    @IBAction func setWeight(_ sender: Any?) {
+//        if weightText.text != ""
+//        {
+//            performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+//        }
+//    }
     
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
