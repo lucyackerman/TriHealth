@@ -14,13 +14,9 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var textFieldTest: UITextField!
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let receiverVC = segue.destination as! RecVC
-        if case let text != nil{
-            receiverVC.text = textFieldTest.text!
-        }
+        let HydrationPageViewController = segue.destination as! HydrationPageViewController
+        HydrationPageViewController.weightSet = weight.text!
     }
     
     //variables
@@ -29,12 +25,15 @@ class ProfileViewController: UIViewController {
     let databaseref = Database.database().reference()
     
     //outlets
+    @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var HydrationButton: UIButton!
-    @IBOutlet weak var weightField: UITextField!
-    @IBAction func setWeight(_ sender: Any) {
-        
+    @IBAction func setWeightButton(_ sender: Any) {
+        if weight.text != ""
+        {
+            performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+        }
     }
     
     //actions
@@ -62,10 +61,6 @@ class ProfileViewController: UIViewController {
             {
                 self.email.text = dict["email"] as? String
                 self.usernameLabel.text = dict["username"] as? String
-                if let userWeight = dict["weight"] as? String
-//                {
-//                    self.weightLabel.text = userWeight
-//                }
             }})
         }
     }
