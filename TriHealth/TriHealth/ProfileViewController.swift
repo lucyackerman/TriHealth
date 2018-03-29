@@ -54,6 +54,7 @@ class ProfileViewController: UIViewController {
     }*/
     override func viewDidLoad() {
         super.viewDidLoad()
+        logout()
         let uid = Auth.auth().currentUser?.uid
         if uid == nil{
             self.logout()

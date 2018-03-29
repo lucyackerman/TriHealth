@@ -20,6 +20,7 @@ class SignInViewController: UIViewController{
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var message: UITextField!
     
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -57,6 +58,9 @@ class SignInViewController: UIViewController{
     }
     func signUp()
     {
+        if username.text == ""{  message.text = "Please enter username"}
+        else if email.text == ""{ message.text = "Please enter email address"}
+        else if password.text == ""{ message.text = "Please enter password"}
         guard let username = username.text else{
             print("username issue")
             return
