@@ -10,18 +10,14 @@ import UIKit
 
 class HydrationPageViewController: UIViewController {
 
+
     @IBOutlet weak var waterNeeded: UILabel!
-
-    var userWeight = String()
-
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        waterNeeded.text = userWeight
-//
-//        // Do any additional setup after loading the view.
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

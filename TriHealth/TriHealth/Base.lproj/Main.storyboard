@@ -30,7 +30,7 @@
                                     <action selector="waterAddStp:" destination="BYZ-38-t0r" eventType="valueChanged" id="a8a-Wf-4Tq"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xno-P8-NXU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xno-P8-NXU">
                                 <rect key="frame" x="154" y="520" width="68" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
@@ -96,6 +96,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="waterNeeded" destination="Xno-P8-NXU" id="srh-2h-IMY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -455,7 +458,22 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="setWeight:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="F0z-tE-1Df"/>
+                                    <action selector="setWeight:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="8t8-Vb-dRO"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmB-P3-i6H">
+                                <rect key="frame" x="125" y="357" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpp-bb-teQ">
+                                <rect key="frame" x="230" y="340" width="46" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <segue destination="fkJ-Mx-PFG" kind="show" id="Fbv-Qs-Ilm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -468,14 +486,42 @@
                     <connections>
                         <outlet property="HydrationButton" destination="rvi-LZ-nii" id="WkR-4S-XiA"/>
                         <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
+                        <outlet property="setWeight" destination="XHh-zS-b2Q" id="7zB-Ta-v1t"/>
+                        <outlet property="textFieldTest" destination="nmB-P3-i6H" id="dEC-eb-MDd"/>
                         <outlet property="usernameLabel" destination="7Sp-qB-4rG" id="jCo-6K-jlj"/>
-                        <outlet property="weightText" destination="gLT-Gi-g10" id="B38-9s-feh"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ToHydrationSegue" id="7N2-ZL-OMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893.60000000000002" y="694.90254872563719"/>
+        </scene>
+        <!--RecVC-->
+        <scene sceneID="VuB-Tk-Wzv">
+            <objects>
+                <viewController id="fkJ-Mx-PFG" customClass="RecVC" customModule="TriHealth" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UL3-33-ZGq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MM-0I-awx">
+                                <rect key="frame" x="115" y="304" width="109" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rZS-1I-JZK"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="3MM-0I-awx" id="pOJ-Mg-7TH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUz-9C-NU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="1426.2368815592206"/>
         </scene>
         <!--Nutrition-->
         <scene sceneID="Pzb-tI-x73">
