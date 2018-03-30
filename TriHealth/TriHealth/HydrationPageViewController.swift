@@ -10,7 +10,7 @@ import UIKit
 
 class HydrationPageViewController: UIViewController {
 
-
+    
     @IBOutlet weak var waterNeeded: UILabel!
     
     var weightSet = String()
@@ -300,7 +300,7 @@ class HydrationPageViewController: UIViewController {
 //             glass6.isHidden = false;
 //
 //             glass7.isHidden = false;
-//             /Users/Tembi/Desktop/12th/CS 5/Git Repository/TriHealth/TriHealth/Info.plist
+
 //             glass8.isHidden = false;
 //
 //             glass9.isHidden = true;
