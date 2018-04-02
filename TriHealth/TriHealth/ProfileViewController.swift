@@ -14,32 +14,27 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var HydrationButton: UIButton!
-    @IBOutlet weak var weightText: UITextField!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let HydrationPageViewController = segue.destination as! HydrationPageViewController
+        HydrationPageViewController.weightSet = weight.text!
+    }
     
-//    @IBAction func setWeight(_ sender: Any?) {
-//        if weightText.text != ""
-//        {
-//            performSegue(withIdentifier: "ToHydrationSegue", sender: self)
-//        }
-//    }
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let weightData =  segue.destination as! HydrationPageViewController
-//        weightData.userWeight = weightText.text!
-//    }
-
-
     //variables
     var cupMeasure = 0
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     
     //outlets
+    @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var HydrationButton: UIButton!
+    @IBAction func setWeightButton(_ sender: Any) {
+        if weight.text != ""
+        {
+            performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+        }
+    }
     
     //actions
     @IBAction func logout(_ sender: Any) {
@@ -54,6 +49,7 @@ class ProfileViewController: UIViewController {
     }*/
     override func viewDidLoad() {
         super.viewDidLoad()
+        logout()
         let uid = Auth.auth().currentUser?.uid
         if uid == nil{
             self.logout()
@@ -65,10 +61,6 @@ class ProfileViewController: UIViewController {
             {
                 self.email.text = dict["email"] as? String
                 self.usernameLabel.text = dict["username"] as? String
-                if let userWeight = dict["weight"] as? String
-                {
-                    self.weightLabel.text = userWeight
-                }
             }})
         }
     }

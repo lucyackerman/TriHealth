@@ -10,10 +10,8 @@ import UIKit
 
 class HydrationPageViewController: UIViewController {
 
+    
     @IBOutlet weak var waterNeeded: UILabel!
-
-    var userWeight = String()
-
     
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -23,6 +21,8 @@ class HydrationPageViewController: UIViewController {
 //        // Do any additional setup after loading the view.
     }
 
+    var weightSet = String()
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
