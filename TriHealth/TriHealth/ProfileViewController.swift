@@ -66,6 +66,7 @@ class ProfileViewController: UIViewController {
     }
     func logout(){
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
+        print("LOGGED OUT")
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
         present(loginViewController, animated: true, completion: nil)
     }

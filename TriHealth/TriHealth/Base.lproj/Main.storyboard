@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ye-aN-rkH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bt1-5l-UvA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -92,6 +92,21 @@
                                 <rect key="frame" x="149" y="165" width="78" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glassComplete" translatesAutoresizingMaskIntoConstraints="NO" id="VN7-va-QsX">
+                                <rect key="frame" x="101" y="241" width="78" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glassComplete" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-KE-mD0">
+                                <rect key="frame" x="16" y="401" width="78" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stepper opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="7IB-Px-77s">
+                                <rect key="frame" x="140" y="594" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="waterAddStp:" destination="BYZ-38-t0r" eventType="valueChanged" id="4i4-RU-pjc"/>
+                                </connections>
+                            </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-aF-rVP">
                                 <rect key="frame" x="15" y="14" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,6 +123,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+
+                        <outlet property="glass1" destination="L0l-KE-mD0" id="89q-MN-9Ol"/>
+                        <outlet property="glass10" destination="OEf-s1-F3D" id="nwc-MZ-Ntt"/>
+                        <outlet property="glass2" destination="LKx-TX-JPe" id="DP2-yj-A79"/>
+                        <outlet property="glass3" destination="TPY-0O-Foz" id="yvq-zg-uLC"/>
+                        <outlet property="glass4" destination="P9I-TZ-5IB" id="mp0-ae-i47"/>
+                        <outlet property="glass5" destination="yny-6U-MIH" id="viV-DP-S37"/>
+                        <outlet property="glass6" destination="4J1-s2-CWx" id="P8w-pU-5Xc"/>
+                        <outlet property="glass7" destination="4ml-bt-UF8" id="rL4-A7-nAm"/>
+                        <outlet property="glass8" destination="VN7-va-QsX" id="xp4-R4-EAP"/>
+                        <outlet property="glass9" destination="hxB-cP-kMB" id="6sw-uN-WOk"/>
+
                         <outlet property="waterNeeded" destination="Xno-P8-NXU" id="Wmo-dr-iro"/>
                     </connections>
                 </viewController>
@@ -571,7 +598,8 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uV8-sS-ZBL" kind="relationship" relationship="rootViewController" id="Hhm-XV-lxL"/>
+                        <segue destination="uV8-sS-ZBL" kind="relationship" relationship="rootVi
+ewController" id="Hhm-XV-lxL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFN-Xe-sxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -587,6 +615,7 @@
         <image name="glassComplete" width="638" height="734"/>
     </resources>
     <inferredMetricsTieBreakers>
+
         <segue reference="Mdn-Rx-FHk"/>
         <segue reference="7N2-ZL-OMx"/>
     </inferredMetricsTieBreakers>
