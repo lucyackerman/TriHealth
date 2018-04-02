@@ -25,10 +25,14 @@ class ProfileViewController: UIViewController {
     let databaseref = Database.database().reference()
     
     //outlets
+    @IBOutlet var errorMessage: UILabel!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var HydrationButton: UIButton!
+    @IBAction func HydrationButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+    }
+    
     @IBAction func setWeightButton(_ sender: Any) {
         if weight.text != ""
         {
@@ -49,7 +53,7 @@ class ProfileViewController: UIViewController {
     }*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        logout()
+
         let uid = Auth.auth().currentUser?.uid
         if uid == nil{
             self.logout()

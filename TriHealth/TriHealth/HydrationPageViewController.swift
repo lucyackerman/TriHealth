@@ -17,7 +17,9 @@ class HydrationPageViewController: UIViewController {
     override func viewDidLoad() {
        super.viewDidLoad()
         let ouncesNeeded = Int(weightSet)
+        if(ouncesNeeded != nil){
         waterNeeded.text = String(ouncesNeeded!/10)
+        }
     }
 
   
