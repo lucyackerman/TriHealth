@@ -21,11 +21,7 @@ class HydrationPageViewController: UIViewController {
     override func viewDidLoad() {
        super.viewDidLoad()
         lastValue = Int(waterStepper.value)
-//
-//        waterNeeded.text = userWeight
-//
-//        // Do any additional setup after loading the view.
-
+        
         let ouncesNeeded = Int(weightSet)
         waterNeeded.text = String(ouncesNeeded!/10)
 
