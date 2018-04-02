@@ -123,7 +123,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-
                         <outlet property="glass1" destination="L0l-KE-mD0" id="89q-MN-9Ol"/>
                         <outlet property="glass10" destination="OEf-s1-F3D" id="nwc-MZ-Ntt"/>
                         <outlet property="glass2" destination="LKx-TX-JPe" id="DP2-yj-A79"/>
@@ -134,7 +133,6 @@
                         <outlet property="glass7" destination="4ml-bt-UF8" id="rL4-A7-nAm"/>
                         <outlet property="glass8" destination="VN7-va-QsX" id="xp4-R4-EAP"/>
                         <outlet property="glass9" destination="hxB-cP-kMB" id="6sw-uN-WOk"/>
-
                         <outlet property="waterNeeded" destination="Xno-P8-NXU" id="Wmo-dr-iro"/>
                     </connections>
                 </viewController>
@@ -597,10 +595,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uV8-sS-ZBL" kind="relationship" relationship="rootVi
-ewController" id="Hhm-XV-lxL"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFN-Xe-sxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -615,7 +609,6 @@ ewController" id="Hhm-XV-lxL"/>
         <image name="glassComplete" width="638" height="734"/>
     </resources>
     <inferredMetricsTieBreakers>
-
         <segue reference="Mdn-Rx-FHk"/>
         <segue reference="7N2-ZL-OMx"/>
     </inferredMetricsTieBreakers>
