@@ -10,11 +10,16 @@ import UIKit
 
 class HydrationPageViewController: UIViewController {
 
+    var lastValue: Int = 0
+    
+    @IBOutlet var waterStepper: UIStepper!
     
     @IBOutlet weak var waterNeeded: UILabel!
     
+    
     override func viewDidLoad() {
        super.viewDidLoad()
+        lastValue = Int(waterStepper.value)
 //
 //        waterNeeded.text = userWeight
 //
@@ -63,11 +68,9 @@ class HydrationPageViewController: UIViewController {
 
     @IBOutlet weak var waterCount: UILabel!
 
-    @IBOutlet weak var waterStepper: UIStepper!
 
     
     @IBAction func waterAddStp(_ sender: UIStepper) {
-        //var lastValue = waterStepper.value
         
         let glassArray: [UIImageView] = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
         
@@ -75,19 +78,18 @@ class HydrationPageViewController: UIViewController {
         let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         
         
-        //if (Int(sender.value)>lastValue)
-        //{
+        if (Int(sender.value)>lastValue)
+        {
             for i in numbers {
                 if (i < Int(sender.value))
                 {
                     glassArray[i].isHidden = false;
                 }
-       /* }
-        else
-        {
-            lastValue = lastValue - 1
-            glassArray[Int(sender.value)].isHidden = false;
-        }*/
+            }
+        } else {
+                glassArray[Int(sender.value)].isHidden = true;
+        }
+        lastValue = Int(sender.value)
 
 
     }
@@ -383,7 +385,7 @@ class HydrationPageViewController: UIViewController {
 //
    }
     
-}
+
 
 
 
