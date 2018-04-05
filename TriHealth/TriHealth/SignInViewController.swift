@@ -17,10 +17,9 @@ class SignInViewController: UIViewController{
     //variables
     let databaseref = Database.database().reference()
     //outlets
-    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var message: UITextField!
+    @IBOutlet var messageLabel: UILabel!
     
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -50,50 +49,28 @@ class SignInViewController: UIViewController{
         }
         Auth.auth().signIn(withEmail:email, password:password, completion: { (user, error) in
             if error != nil{
-                print(error!)
+                self.messageLabel.text = "Incorrect email or password"
                 return
             }
             self.dismiss(animated:true, completion: nil)
+            self.openProfile()
         })
     }
     func signUp()
     {
-        if username.text == ""{  message.text = "Please enter username"}
-        else if email.text == ""{ message.text = "Please enter email address"}
-        else if password.text == ""{ message.text = "Please enter password"}
-        guard let username = username.text else{
-            print("username issue")
-            return
-        }
-        guard let email = email.text else{
-            print("email issue")
-            return
-        }
-        guard let password = password.text else{
-            print("password issue")
-            return
-        }
-        Auth.auth().createUser(withEmail:email, password:password, completion: {(user,error) in
-            if error != nil{
-                print(error!)
-                return
-            }
-            guard let uid = user?.uid else{
-                return
-            }
-            let userReference = self.databaseref.child("users").child(uid)
-            let values = ["username":username, "email":email]
-            
-            userReference.updateChildValues(values, withCompletionBlock: {error, ref in
-                if error != nil{
-                    print(error!)
-                    return
-                }
-                self.dismiss(animated: true, completion: nil)
-            })
-        })
-        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let signUpVC:SignUpViewController = storyboard.instantiateViewController(withIdentifier: "signUp") as! SignUpViewController
+        self.present(signUpVC, animated: true, completion: nil)
     }
+    func openProfile()
+    {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        self.present(profileVC, animated: true, completion: nil)
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             return
@@ -102,4 +79,5 @@ class SignInViewController: UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
+    
 }

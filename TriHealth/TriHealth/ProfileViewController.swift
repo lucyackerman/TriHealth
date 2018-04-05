@@ -16,12 +16,12 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var textFieldTest: UITextField!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let receiverVC = segue.destination as! RecVC
-        if case let text != nil{
+        if case let text != nil {
             receiverVC.text = textFieldTest.text!
         }
-    }
+    }*/
     
     //variables
     var cupMeasure = 0
@@ -32,16 +32,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var HydrationButton: UIButton!
-    @IBOutlet weak var weightField: UITextField!
-    @IBAction func setWeight(_ sender: Any) {
-        
-    }
     
     //actions
-    @IBAction func logout(_ sender: Any) {
+    @IBAction func logoutButton(_ sender: Any) {
         logout()
     }
-    
     //functions
     /*func waterWeight(weightInput: Int) -> Int{
         cupMeasure = (weightInput/20)
@@ -50,7 +45,6 @@ class ProfileViewController: UIViewController {
     }*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        logout()
         let uid = Auth.auth().currentUser?.uid
         if uid == nil{
             self.logout()
@@ -62,14 +56,18 @@ class ProfileViewController: UIViewController {
             {
                 self.email.text = dict["email"] as? String
                 self.usernameLabel.text = dict["username"] as? String
-                if let userWeight = dict["weight"] as? String
-//                {
-//                    self.weightLabel.text = userWeight
-//                }
             }})
         }
     }
     func logout(){
+        do{
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+            
+        }catch{
+            print("error logging out")
+        }
+        
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
         present(loginViewController, animated: true, completion: nil)
