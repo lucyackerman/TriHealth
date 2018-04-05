@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ye-aN-rkH">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bt1-5l-UvA">
+>>>>>>> 9b7a39601f74a16c322e5b8423852566cf358d25
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +31,7 @@
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xno-P8-NXU">
                                 <rect key="frame" x="154" y="520" width="68" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,17 +91,54 @@
                                 <rect key="frame" x="149" y="165" width="78" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glassComplete" translatesAutoresizingMaskIntoConstraints="NO" id="VN7-va-QsX">
+                                <rect key="frame" x="101" y="241" width="78" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glassComplete" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-KE-mD0">
+                                <rect key="frame" x="16" y="401" width="78" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stepper opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="7IB-Px-77s">
+                                <rect key="frame" x="140" y="594" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="waterAddStp:" destination="BYZ-38-t0r" eventType="valueChanged" id="4i4-RU-pjc"/>
+                                </connections>
+                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-aF-rVP">
+                                <rect key="frame" x="15" y="14" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uV8-sS-ZBL" kind="show" id="Mdn-Rx-FHk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="waterNeeded" destination="Xno-P8-NXU" id="srh-2h-IMY"/>
+                        <outlet property="glass1" destination="L0l-KE-mD0" id="89q-MN-9Ol"/>
+                        <outlet property="glass10" destination="OEf-s1-F3D" id="nwc-MZ-Ntt"/>
+                        <outlet property="glass2" destination="LKx-TX-JPe" id="DP2-yj-A79"/>
+                        <outlet property="glass3" destination="TPY-0O-Foz" id="yvq-zg-uLC"/>
+                        <outlet property="glass4" destination="P9I-TZ-5IB" id="mp0-ae-i47"/>
+                        <outlet property="glass5" destination="yny-6U-MIH" id="viV-DP-S37"/>
+                        <outlet property="glass6" destination="4J1-s2-CWx" id="P8w-pU-5Xc"/>
+                        <outlet property="glass7" destination="4ml-bt-UF8" id="rL4-A7-nAm"/>
+                        <outlet property="glass8" destination="VN7-va-QsX" id="xp4-R4-EAP"/>
+                        <outlet property="glass9" destination="hxB-cP-kMB" id="6sw-uN-WOk"/>
+                        <outlet property="waterNeeded" destination="Xno-P8-NXU" id="Wmo-dr-iro"/>
+                        <outlet property="waterStepper" destination="7IB-Px-77s" id="jQY-7w-Q7s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="180"/>
+            <point key="canvasLocation" x="1840.8" y="179.46026986506749"/>
         </scene>
         <!--Log In Page-->
         <scene sceneID="u0m-Hi-WAl">
@@ -148,6 +189,7 @@
                                 <accessibility key="accessibilityConfiguration" label="or"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
+<<<<<<< HEAD
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2m-i4-lJc" userLabel="Email">
@@ -187,6 +229,14 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+=======
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <connections>
+                                    <action selector="username:" destination="3Ef-gX-Sgu" eventType="editingDidEnd" id="6he-0C-oD5"/>
+                                </connections>
+                            </textField>
+>>>>>>> 9b7a39601f74a16c322e5b8423852566cf358d25
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,7 +268,10 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="v2m-i4-lJc" id="QDR-rg-7Ub"/>
+<<<<<<< HEAD
                         <outlet property="messageLabel" destination="N6b-0m-PV3" id="NAd-4v-lWE"/>
+=======
+>>>>>>> 9b7a39601f74a16c322e5b8423852566cf358d25
                         <outlet property="password" destination="eFI-Q7-a5J" id="x7M-Bt-hf9"/>
                     </connections>
                 </viewController>
@@ -446,7 +499,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="glassComplete"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="BsR-g1-RS8"/>
+                                    <action selector="HydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="46E-0N-FhU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hydration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P83-Nz-NXC">
@@ -470,33 +523,19 @@
                                 <state key="normal" title="SET">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmB-P3-i6H">
-                                <rect key="frame" x="125" y="357" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpp-bb-teQ">
-                                <rect key="frame" x="230" y="340" width="46" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go"/>
                                 <connections>
-                                    <segue destination="fkJ-Mx-PFG" kind="show" id="Fbv-Qs-Ilm"/>
+                                    <action selector="setWeightButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="6XX-5Z-gY3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ron-Kc-7SF">
-                                <rect key="frame" x="16" y="583" width="343" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDm-N6-T9r">
+                                <rect key="frame" x="75" y="341" width="225" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58963268995285034" green="0.88687640428543091" blue="0.90917128324508667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="logout">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="88l-h5-ioD"/>
-                                </connections>
-                            </button>
+                                <accessibility key="accessibilityConfiguration" label="errormessage"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZO5-4w-sib"/>
@@ -505,16 +544,17 @@
                     <navigationItem key="navigationItem" id="xb3-9Z-EQS"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="HydrationButton" destination="rvi-LZ-nii" id="WkR-4S-XiA"/>
                         <outlet property="email" destination="2eW-I1-I3g" id="KbP-lK-QZ3"/>
                         <outlet property="textFieldTest" destination="nmB-P3-i6H" id="dEC-eb-MDd"/>
                         <outlet property="usernameLabel" destination="7Sp-qB-4rG" id="jCo-6K-jlj"/>
+                        <outlet property="weight" destination="gLT-Gi-g10" id="pMF-DT-oTu"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ToHydrationSegue" id="7N2-ZL-OMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzz-WV-Es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="892" y="694.00299850074964"/>
+<<<<<<< HEAD
         </scene>
         <!--SignUp-->
         <scene sceneID="Lgl-nI-MQs">
@@ -753,9 +793,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uV8-sS-ZBL" kind="relationship" relationship="rootViewController" id="Hhm-XV-lxL"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFN-Xe-sxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -767,5 +804,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7N2-ZL-OMx"/>
+        <segue reference="Mdn-Rx-FHk"/>
     </inferredMetricsTieBreakers>
 </document>

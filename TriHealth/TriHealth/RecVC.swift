@@ -9,14 +9,13 @@
 import UIKit
 
 class RecVC: UIViewController {
-    
-    var text: String?
-    @IBOutlet weak var label: UILabel!
-    
-    override func viewDidLoad() {
-        if let receivedText = text {
-        label.text = receivedText
-        }
-    }
 
+    @IBOutlet weak var label: UILabel!
+    var myString = String()
+    
+    override func  viewDidLoad() {
+        super.viewDidLoad()
+        label.text = myString
+    }
+    
 }

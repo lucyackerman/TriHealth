@@ -14,14 +14,13 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
+
     @IBOutlet weak var textFieldTest: UITextField!
     
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let receiverVC = segue.destination as! RecVC
-        if case let text != nil {
-            receiverVC.text = textFieldTest.text!
-        }
-    }*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let HydrationPageViewController = segue.destination as! HydrationPageViewController
+        HydrationPageViewController.weightSet = weight.text!
+    }
     
     //variables
     var cupMeasure = 0
@@ -29,10 +28,21 @@ class ProfileViewController: UIViewController {
     let databaseref = Database.database().reference()
     
     //outlets
+    @IBOutlet var errorMessage: UILabel!
+    @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var HydrationButton: UIButton!
+
+    @IBAction func HydrationButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+    }
     
+    @IBAction func setWeightButton(_ sender: Any) {
+        if weight.text != ""
+        {
+            performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+        }
+    }
     //actions
     @IBAction func logoutButton(_ sender: Any) {
         logout()
@@ -45,6 +55,7 @@ class ProfileViewController: UIViewController {
     }*/
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let uid = Auth.auth().currentUser?.uid
         if uid == nil{
             self.logout()
@@ -69,6 +80,7 @@ class ProfileViewController: UIViewController {
         }
         
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
+        print("LOGGED OUT")
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
         present(loginViewController, animated: true, completion: nil)
     }
