@@ -56,6 +56,10 @@ class SignUpViewController: UIViewController {
             self.messageLabel.text = "Please create a password."
             return
         }
+        guard let fullname = fullname.text else{
+            self.messageLabel.text = "Please enter your name."
+            return
+        }
         Auth.auth().createUser(withEmail:email, password:password, completion: {(user,error) in
             if error != nil{
                 self.messageLabel.text = "User already exists with that email"
@@ -65,7 +69,8 @@ class SignUpViewController: UIViewController {
                 return
             }
             let userReference = self.databaseref.child("users").child(uid)
-            let values = ["email":email]
+            let values = ["email":email,"name":fullname]
+    
             
             userReference.updateChildValues(values, withCompletionBlock: {error, ref in
                 if error != nil{

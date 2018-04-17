@@ -25,14 +25,9 @@ class HydrationPageViewController: UIViewController {
         let ouncesNeeded = Int(weightSet)
         if(ouncesNeeded != nil){
         waterNeeded.text = String(ouncesNeeded!/10)
-<<<<<<< HEAD
         }
-=======
-
->>>>>>> 4715d14e913a2f5daddcb18f6359d3d658d06289
+        
     }
-
-  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -40,13 +40,23 @@ class ProfileViewController: UIViewController {
     @IBAction func setWeightButton(_ sender: Any) {
         if weight.text != ""
         {
-            performSegue(withIdentifier: "ToHydrationSegue", sender: self)
-        }
+            let uid = Auth.auth().currentUser?.uid
+            let userReference = self.databaseref.child("users").child(uid!)
+            let values = ["weight":weight.text]
+            
+            userReference.updateChildValues(values, withCompletionBlock: {error, ref in
+                if error != nil{
+                    return
+                }
+            self.performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+            })
+    }
     }
     //actions
-    @IBAction func logoutButton(_ sender: Any) {
+    @IBAction func logout(_ sender: Any) {
         logout()
     }
+    
     //functions
     /*func waterWeight(weightInput: Int) -> Int{
         cupMeasure = (weightInput/20)
@@ -55,7 +65,6 @@ class ProfileViewController: UIViewController {
     }*/
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let uid = Auth.auth().currentUser?.uid
         if uid == nil{
             self.logout()
@@ -66,21 +75,18 @@ class ProfileViewController: UIViewController {
                 if let dict = snapshot.value as? [String: AnyObject]
             {
                 self.email.text = dict["email"] as? String
-                self.usernameLabel.text = dict["username"] as? String
+                self.usernameLabel.text = dict["name"] as? String
             }})
         }
     }
     func logout(){
         do{
             try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
-            
         }catch{
             print("error logging out")
         }
         
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
-        print("LOGGED OUT")
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
         present(loginViewController, animated: true, completion: nil)
     }
