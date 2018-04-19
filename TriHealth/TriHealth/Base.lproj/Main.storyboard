@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bt1-5l-UvA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bt1-5l-UvA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+        <array key="Copperplate.ttc">
+            <string>Copperplate</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Hydration Page-->
         <scene sceneID="tne-QT-ifu">
@@ -472,16 +483,6 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-LZ-nii">
-                                <rect key="frame" x="138" y="387" width="99" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="P4r-sR-TaG"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="glassComplete"/>
-                                <connections>
-                                    <action selector="HydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="46E-0N-FhU"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="none set" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLT-Gi-g10">
                                 <rect key="frame" x="40" y="292" width="295" height="30"/>
                                 <color key="backgroundColor" red="0.61176470588235299" green="0.88627450980392153" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -535,6 +536,16 @@
                                 </state>
                                 <connections>
                                     <action selector="setWeightButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="6XX-5Z-gY3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-LZ-nii">
+                                <rect key="frame" x="141" y="397" width="97" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="P4r-sR-TaG"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Image"/>
+                                <connections>
+                                    <action selector="HydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="46E-0N-FhU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -817,9 +828,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="198" height="229"/>
         <image name="glassComplete" width="638" height="734"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7N2-ZL-OMx"/>
+        <segue reference="Mdn-Rx-FHk"/>
     </inferredMetricsTieBreakers>
 </document>
