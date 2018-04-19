@@ -76,9 +76,6 @@ class SignInViewController: UIViewController{
         let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(profileVC, animated: true, completion: nil)
     }
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             return

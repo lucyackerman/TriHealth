@@ -14,14 +14,6 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
-
-    @IBOutlet weak var textFieldTest: UITextField!
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let HydrationPageViewController = segue.destination as! HydrationPageViewController
-        HydrationPageViewController.weightSet = weight.text!
-    }
-    
     //variables
     var cupMeasure = 0
     let storageref = Storage.storage().reference()
@@ -33,36 +25,33 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var email: UILabel!
 
-    @IBAction func HydrationButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "ToHydrationSegue", sender: self)
+    //actions
+    @IBAction func hydrationButton(_ sender: Any) {
+        if(weight.text != "")//checks that user has a weight
+        {
+            openHydration() //segues to hydration page
+        }
+        else{ errorMessage.text = "Please add a weight to your profile."}
     }
     
-    @IBAction func setWeightButton(_ sender: Any) {
+    @IBAction func saveChangesButton(_ sender: Any) {
         if weight.text != ""
         {
             let uid = Auth.auth().currentUser?.uid
             let userReference = self.databaseref.child("users").child(uid!)
             let values = ["weight":weight.text]
-            
+            errorMessage.text = "Weight Saved."
             userReference.updateChildValues(values, withCompletionBlock: {error, ref in
                 if error != nil{
                     return
-                }
-            self.performSegue(withIdentifier: "ToHydrationSegue", sender: self)
-            })
+                }})
+        }
     }
-    }
-    //actions
     @IBAction func logout(_ sender: Any) {
         logout()
     }
     
     //functions
-    /*func waterWeight(weightInput: Int) -> Int{
-        cupMeasure = (weightInput/20)
-        
-        return cupMeasure
-    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         let uid = Auth.auth().currentUser?.uid
@@ -76,18 +65,29 @@ class ProfileViewController: UIViewController {
             {
                 self.email.text = dict["email"] as? String
                 self.usernameLabel.text = dict["name"] as? String
+                if dict["weight"] as? String != nil{
+                    self.weight.text = dict["weight"] as? String
+                }
             }})
         }
     }
     func logout(){
         do{
-            try Auth.auth().signOut()
+            try Auth.auth().signOut() //logs out user
         }catch{
             print("error logging out")
         }
         
+        //segues to sign in screen
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
         present(loginViewController, animated: true, completion: nil)
+    }
+    func openHydration()
+    {
+        //segues to hydration page
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let hydrationVC:HydrationPageViewController = storyboard.instantiateViewController(withIdentifier: "hydration") as! HydrationPageViewController
+        self.present(hydrationVC, animated: true, completion: nil)
     }
 }
