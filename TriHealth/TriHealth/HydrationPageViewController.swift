@@ -17,6 +17,8 @@ class HydrationPageViewController: UIViewController {
     //variables
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid
+   // let userReference = self.databaseref.child("users").child(uid!)
     var lastValue: Int = 0
     @IBOutlet var waterStepper: UIStepper!
     @IBOutlet weak var waterNeeded: UILabel!
@@ -32,15 +34,7 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var glass9: UIImageView!
     @IBOutlet var glass10: UIImageView!
     
-    self.databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
-            in
-            if let dict = snapshot.value as? [String: AnyObject]
-            {
-                weight = dict["weight"]
-    }})
-    let uid = Auth.auth().currentUser?.uid
-    let userReference = self.databaseref.child("users").child(uid!)
-    var weight = dict["weight"]
+    
     
     //actions
     @IBAction func waterAddStp(_ sender: UIStepper) {
