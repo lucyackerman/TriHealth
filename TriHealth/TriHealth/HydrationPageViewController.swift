@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 class HydrationPageViewController: UIViewController {
 
     //variables
+    let storageref = Storage.storage().reference()
+    let databaseref = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid
+   // let userReference = self.databaseref.child("users").child(uid!)
     var lastValue: Int = 0
     @IBOutlet var waterStepper: UIStepper!
     @IBOutlet weak var waterNeeded: UILabel!
@@ -25,6 +33,8 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var glass8: UIImageView!
     @IBOutlet var glass9: UIImageView!
     @IBOutlet var glass10: UIImageView!
+    
+    
     
     //actions
     @IBAction func waterAddStp(_ sender: UIStepper) {
@@ -51,7 +61,6 @@ class HydrationPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lastValue = Int(waterStepper.value)
-        
         let ouncesNeeded = Int(weightSet)
         if(ouncesNeeded != nil){
             waterNeeded.text = String(ouncesNeeded!/10)
@@ -70,6 +79,7 @@ class HydrationPageViewController: UIViewController {
         self.present(profileVC, animated: true, completion: nil)
     }
 }
+
     
 
 
