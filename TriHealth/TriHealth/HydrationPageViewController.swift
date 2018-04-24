@@ -18,7 +18,6 @@ class HydrationPageViewController: UIViewController {
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     let uid = Auth.auth().currentUser?.uid
-   // let userReference = self.databaseref.child("users").child(uid!)
     var lastValue: Int = 0
     @IBOutlet var waterStepper: UIStepper!
     @IBOutlet weak var waterNeeded: UILabel!
@@ -60,18 +59,23 @@ class HydrationPageViewController: UIViewController {
     //functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+            in
+            if let dict = snapshot.value as? [String: AnyObject]
+            {
+                let usersWeight = dict["weight"]
+                let cupsFilled = dict["dailyCups"]
+            }})
         lastValue = Int(waterStepper.value)
         let ouncesNeeded = Int(weightSet)
         if(ouncesNeeded != nil){
             waterNeeded.text = String(ouncesNeeded!/10)
         }
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBOutlet weak var waterCount: UILabel! //CAN WE DELETE THIS?
     func openProfile()
     {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

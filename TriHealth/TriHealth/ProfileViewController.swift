@@ -39,9 +39,15 @@ class ProfileViewController: UIViewController {
         {
             let uid = Auth.auth().currentUser?.uid
             let userReference = self.databaseref.child("users").child(uid!)
+            let goal = String(Int(weight.text!)!/10)
             let values = ["weight":weight.text]
             errorMessage.text = "Weight Saved."
             userReference.updateChildValues(values, withCompletionBlock: {error, ref in
+                if error != nil{
+                    return
+                }})
+            let values2 = ["goal":goal]
+            userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
                 if error != nil{
                     return
                 }})
