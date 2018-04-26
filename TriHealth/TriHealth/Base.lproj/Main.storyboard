@@ -239,6 +239,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dailygoal" destination="fK0-14-M6z" id="u5c-uW-PXE"/>
+                        <outlet property="dailytotal" destination="RjJ-Z6-XJC" id="ng5-r0-Eml"/>
                         <outlet property="glass1" destination="L0l-KE-mD0" id="89q-MN-9Ol"/>
                         <outlet property="glass10" destination="OEf-s1-F3D" id="nwc-MZ-Ntt"/>
                         <outlet property="glass2" destination="LKx-TX-JPe" id="DP2-yj-A79"/>

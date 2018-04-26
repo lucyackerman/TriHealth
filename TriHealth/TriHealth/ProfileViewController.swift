@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
         {
             let uid = Auth.auth().currentUser?.uid
             let userReference = self.databaseref.child("users").child(uid!)
-            let goal = String(Int(weight.text!)!/10)
+            let goal = String(Int(weight.text!)!*2/3)
             let values = ["weight":weight.text]
             errorMessage.text = "Weight Saved."
             userReference.updateChildValues(values, withCompletionBlock: {error, ref in
@@ -48,6 +48,11 @@ class ProfileViewController: UIViewController {
                 }})
             let values2 = ["goal":goal]
             userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
+                if error != nil{
+                    return
+                }})
+            let values3 = ["dailytotal":String(0)]
+            userReference.updateChildValues(values3, withCompletionBlock: {error, ref in
                 if error != nil{
                     return
                 }})
@@ -65,7 +70,7 @@ class ProfileViewController: UIViewController {
             self.logout()
         }
         else{
-            databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+        databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
             in
                 if let dict = snapshot.value as? [String: AnyObject]
             {

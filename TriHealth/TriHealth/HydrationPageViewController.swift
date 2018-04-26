@@ -32,8 +32,8 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var glass8: UIImageView!
     @IBOutlet var glass9: UIImageView!
     @IBOutlet var glass10: UIImageView!
-    
-    
+    @IBOutlet var dailygoal: UILabel!
+    @IBOutlet var dailytotal: UILabel!
     
     //actions
     @IBAction func waterAddStp(_ sender: UIStepper) {
@@ -63,10 +63,12 @@ class HydrationPageViewController: UIViewController {
             in
             if let dict = snapshot.value as? [String: AnyObject]
             {
-                let usersWeight = dict["weight"]
-                let cupsFilled = dict["dailyCups"]
+                //displays daily goal and ounces drank
+                self.dailytotal.text = "\((dict["dailytotal"] as? String)!) oz"
+                self.dailygoal.text = "\((dict["goal"] as? String)!) oz"
+                let tempval = dict["dailytotal"] as? String
+                self.lastValue = Int(tempval!)!
             }})
-        lastValue = Int(waterStepper.value)
         let ouncesNeeded = Int(weightSet)
         if(ouncesNeeded != nil){
             waterNeeded.text = String(ouncesNeeded!/10)
