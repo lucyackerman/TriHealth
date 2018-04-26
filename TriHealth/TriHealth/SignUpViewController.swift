@@ -70,8 +70,6 @@ class SignUpViewController: UIViewController {
             }
             let userReference = self.databaseref.child("users").child(uid)
             let values = ["email":email,"name":fullname]
-    
-            
             userReference.updateChildValues(values, withCompletionBlock: {error, ref in
                 if error != nil{
                     self.messageLabel.text = error as? String
