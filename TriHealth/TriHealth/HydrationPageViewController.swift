@@ -86,6 +86,7 @@ class HydrationPageViewController: UIViewController {
         let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(profileVC, animated: true, completion: nil)
     }
+    
 }
 
     
