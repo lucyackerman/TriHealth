@@ -22,6 +22,7 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var waterStepper: UIStepper!
     @IBOutlet weak var waterNeeded: UILabel!
     var weightSet = String()
+    
     @IBOutlet var glass1: UIImageView!
     @IBOutlet var glass2: UIImageView!
     @IBOutlet var glass3: UIImageView!
@@ -34,6 +35,7 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var glass10: UIImageView!
     @IBOutlet var dailygoal: UILabel!
     @IBOutlet var dailytotal: UILabel!
+
     
     //actions
     @IBAction func waterAddStp(_ sender: UIStepper) {
