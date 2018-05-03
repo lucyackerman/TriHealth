@@ -119,9 +119,10 @@ class ProfileViewController: UIViewController {
         self.present(rewardsVC, animated: true, completion: nil)
     func openFitness()
     {
-        //segues to hydration page
+        //segues to fitness page
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let fitnessVC:FitnessViewController = storyboard.instantiateViewController(withIdentifier: "Fitness") as! FitnessViewController
         self.present(fitnessVC, animated: true, completion: nil)
     }
+}
 }
