@@ -18,7 +18,8 @@ class HydrationPageViewController: UIViewController {
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     let uid = Auth.auth().currentUser?.uid
-    var lastValue: Int = 0
+    var cupsval: Int = 0
+    var numCupsLoads: Int = 0
     @IBOutlet var waterStepper: UIStepper!
     @IBOutlet weak var waterNeeded: UILabel!
     var weightSet = String()
@@ -43,16 +44,15 @@ class HydrationPageViewController: UIViewController {
         
         let glassArray: [UIImageView] = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
         let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        if (Int(sender.value)>lastValue)
-        {
-            for i in numbers {
-                if (i < Int(sender.value))
+        let tempcups = self.numCupsLoads + Int(sender.value)
+        for i in numbers {
+                if (i < tempcups)
                 {
                     glassArray[i].isHidden = false;
                 }
-            }
-        } else {
-            glassArray[Int(sender.value)].isHidden = true;
+                else {
+                    glassArray[i].isHidden = true;
+                }
         }
         //lastValue = Int(sender.value)
         let newtotal = tempcups*self.cupsval
