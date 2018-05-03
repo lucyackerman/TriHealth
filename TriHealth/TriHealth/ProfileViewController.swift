@@ -34,6 +34,15 @@ class ProfileViewController: UIViewController {
         else{ errorMessage.text = "Please add a weight to your profile."}
     }
     
+
+    @IBAction func rewardsButton(_ sender: UIButton) {
+        openRewards()
+    }
+    
+    @IBAction func fitnessButton(_ sender: Any) {
+        openFitness() //segues to fitness page
+    }
+    
     @IBAction func saveChangesButton(_ sender: Any) {
         if weight.text != ""
         {
@@ -101,4 +110,21 @@ class ProfileViewController: UIViewController {
         let hydrationVC:HydrationPageViewController = storyboard.instantiateViewController(withIdentifier: "hydration") as! HydrationPageViewController
         self.present(hydrationVC, animated: true, completion: nil)
     }
+    
+    func openRewards()
+    {
+        //segues to rewards page
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rewardsVC:RewardsViewController = storyboard.instantiateViewController(withIdentifier: "rewards") as! RewardsViewController
+        self.present(rewardsVC, animated: true, completion: nil)
+    }
+    
+    func openFitness()
+    {
+        //segues to fitness page
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let fitnessVC:FitnessViewController = storyboard.instantiateViewController(withIdentifier: "Fitness") as! FitnessViewController
+        self.present(fitnessVC, animated: true, completion: nil)
+    }
+}
 }
