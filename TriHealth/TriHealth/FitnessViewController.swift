@@ -13,6 +13,12 @@ import FirebaseDatabase
 
 class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
+    //Back Button
+    
+    @IBAction func fitnessBackButton(_ sender: Any) {
+        openProfile()
+    }
+    
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     let uid = Auth.auth().currentUser?.uid
