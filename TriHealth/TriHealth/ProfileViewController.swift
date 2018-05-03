@@ -117,6 +117,8 @@ class ProfileViewController: UIViewController {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let rewardsVC:RewardsViewController = storyboard.instantiateViewController(withIdentifier: "rewards") as! RewardsViewController
         self.present(rewardsVC, animated: true, completion: nil)
+    }
+    
     func openFitness()
     {
         //segues to fitness page
