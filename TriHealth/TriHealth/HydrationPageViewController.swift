@@ -18,7 +18,7 @@ class HydrationPageViewController: UIViewController {
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     let uid = Auth.auth().currentUser?.uid
-    var cupsval: Int = 0
+    var cupsval: Double = 0.0
     var numCupsLoads: Int = 0
     @IBOutlet var waterStepper: UIStepper!
     @IBOutlet weak var waterNeeded: UILabel!
@@ -40,6 +40,9 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var datelabel: UILabel!
     
     //actions
+    @IBAction func rewards(_ sender: Any) {
+        openRewards()
+    }    
     @IBAction func waterAddStp(_ sender: UIStepper) {
         
         let glassArray: [UIImageView] = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
@@ -55,7 +58,7 @@ class HydrationPageViewController: UIViewController {
                 }
         }
         //lastValue = Int(sender.value)
-        let newtotal = tempcups*self.cupsval
+        let newtotal = Double(tempcups)*self.cupsval
         self.dailytotal.text = "\(newtotal) oz"
         saveTotal(value: String(newtotal))
     }
@@ -83,7 +86,7 @@ class HydrationPageViewController: UIViewController {
                 self.dailygoal.text = "\((dict["goal"] as? String)!) oz"
 
                 //calculates and displays amount of water per cup
-                self.cupsval = Int((dict["goal"] as? String)!)!/10
+                self.cupsval = Double((dict["goal"] as? String)!)!/10.0
                 self.waterlabel.text = "ADD WATER (\(self.cupsval) oz per cup)"
                 
                 //takes last saved date and compares to todays date
@@ -92,16 +95,16 @@ class HydrationPageViewController: UIViewController {
                     //displays daily goal and ounces drank
                     self.dailytotal.text = "\((dict["dailytotal"] as? String)!) oz"
                     //sets lastvalue to the amount of cups drank
-                    let dailytotal = Int((dict["dailytotal"] as? String)!)!
-                    self.numCupsLoads = dailytotal/self.cupsval
+                    let dailytotal = Double((dict["dailytotal"] as? String)!)!
+                    self.numCupsLoads = Int(dailytotal/self.cupsval)
                 }
                 else{
                     self.saveTotal(value: "0")
                     //displays daily goal and ounces drank
                     self.dailytotal.text = "\(0) oz"
                     //sets lastvalue to the amount of cups drank
-                    let dailytotal = 0
-                    self.numCupsLoads = dailytotal/self.cupsval
+                    let dailytotal = 0.0
+                    self.numCupsLoads = Int(dailytotal/self.cupsval)
                 }
                 //set minimum to previous amount of cups
                 self.waterStepper.minimumValue = Double(-(self.numCupsLoads))
@@ -148,6 +151,13 @@ class HydrationPageViewController: UIViewController {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(profileVC, animated: true, completion: nil)
+    }
+    func openRewards()
+    {
+        //segues to rewards page
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rewardsVC:RewardsViewController = storyboard.instantiateViewController(withIdentifier: "rewards") as! RewardsViewController
+        self.present(rewardsVC, animated: true, completion: nil)
     }
     
 }

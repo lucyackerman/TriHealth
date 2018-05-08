@@ -127,4 +127,4 @@ class ProfileViewController: UIViewController {
         self.present(fitnessVC, animated: true, completion: nil)
     }
 }
-}
+
