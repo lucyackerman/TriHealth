@@ -42,9 +42,9 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             let type = sportsType[typeFitness.selectedRow(inComponent: 0)]
             //rigor
             var rigor = ""
-            if(currentSlide.value < 1){
+            if(currentSlide.value <= 1){
                  rigor = "easy"}
-            else if(currentSlide.value < 2){
+            else if(currentSlide.value <= 2){
                  rigor = "medium"}
             else{
                  rigor = "hard"}
