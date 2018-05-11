@@ -14,6 +14,9 @@ class RewardsViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         backToProfile()
     }
+    @IBAction func redeemButton(_ sender: Any) {
+        openRedeemRewards()
+    }
     
     
     override func viewDidLoad() {
@@ -33,6 +36,14 @@ class RewardsViewController: UIViewController {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(profileVC, animated: true, completion: nil)
+    }
+    
+    func openRedeemRewards()
+    {
+        //segues to redeem reward page
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let redeemVC:RedeemRewardsViewController = storyboard.instantiateViewController(withIdentifier: "redeem") as! RedeemRewardsViewController
+        self.present(redeemVC, animated: true, completion: nil)
     }
 
     /*
