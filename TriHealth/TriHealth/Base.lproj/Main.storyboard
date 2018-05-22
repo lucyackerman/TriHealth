@@ -141,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="currentSlide" destination="JrE-52-CxK" id="gkz-dh-RXG"/>
+                        <outlet property="datelabel" destination="sD6-Co-0Di" id="eCP-MD-Nay"/>
                         <outlet property="timeHRFitness" destination="vSQ-ZF-QoE" id="NiB-uh-qhi"/>
                         <outlet property="timeMINFitness" destination="vIj-n1-Ihf" id="adB-C6-3cK"/>
                         <outlet property="typeFitness" destination="sDN-bT-74A" id="7xJ-ZI-FxK"/>
@@ -284,7 +285,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backToProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="97e-w6-qEm"/>
                                     <action selector="rewards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SwM-L6-06l"/>
                                 </connections>
                             </button>
@@ -551,7 +551,7 @@
                 <viewController storyboardIdentifier="profile" title="Profile" id="uV8-sS-ZBL" customClass="ProfileViewController" customModule="TriHealth" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ProfileViewController" id="gYv-gb-uUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtN-H6-9Xg">
                                 <rect key="frame" x="40" y="180" width="295" height="20.5"/>
@@ -634,14 +634,6 @@
                                     <action selector="saveChangesButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="GG8-Oc-HkR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-8t-wQb">
-                                <rect key="frame" x="249" y="380" width="103" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rewards"/>
-                                <connections>
-                                    <action selector="rewardsButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="lLt-sR-RwE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-wQ-Rjj">
                                 <rect key="frame" x="16" y="387" width="145" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -656,6 +648,14 @@
                                 <state key="normal" title="Button" image="water"/>
                                 <connections>
                                     <action selector="hydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="Tqd-6W-tSv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-8t-wQb">
+                                <rect key="frame" x="249" y="379" width="104" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="rewards"/>
+                                <connections>
+                                    <action selector="rewardsButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="lLt-sR-RwE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -838,8 +838,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fitness" width="488" height="258"/>
-        <image name="rewards" width="309" height="292"/>
-        <image name="water" width="213" height="269"/>
+        <image name="fitness" width="469" height="256"/>
+        <image name="rewards" width="504" height="469"/>
+        <image name="water" width="354" height="496"/>
     </resources>
 </document>

@@ -19,6 +19,7 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         openProfile()
     }
     
+    @IBOutlet var datelabel: UILabel!
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     let uid = Auth.auth().currentUser?.uid
@@ -35,8 +36,12 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             let currentDateTime = NSDate()
             let formatter = DateFormatter()
             formatter.timeStyle = .medium
+            formatter.dateStyle = .none
+            let timedate = formatter.string(from: currentDateTime as Date) // October 8, 2016 at 10:48:53 PM
+            
+            formatter.timeStyle = .none
             formatter.dateStyle = .long
-            let date = formatter.string(from: currentDateTime as Date) // October 8, 2016 at 10:48:53 PM
+            let timelessdate = formatter.string(from: currentDateTime as Date)
             
             //type
             let type = sportsType[typeFitness.selectedRow(inComponent: 0)]
@@ -54,11 +59,11 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             
             //uid and references
             let uid = Auth.auth().currentUser?.uid
-            let userReference = self.databaseref.child("users").child(uid!)
+            let userReference = self.databaseref.child("users").child(uid!).child("fitnesslog").child(timelessdate).child(timedate)
             
             //upload time
-            let post: [String : Any] = ["day":date, "fitnesstype":type, "rigor":rigor, "time": time]
-            userReference.updateChildValues(post, withCompletionBlock: {error, ref in
+            let dictPost = ["fitnesstype":type, "rigor":rigor, "time": time]
+            userReference.updateChildValues(dictPost, withCompletionBlock: {error, ref in
                 if error != nil{
                     return
                 }})
@@ -80,7 +85,6 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     
     //RIGOR
-    
     @IBOutlet weak var currentSlide: UISlider!
     
 
@@ -98,9 +102,17 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //display the date
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .long
+        let date = formatter.string(from: currentDateTime)
+        datelabel.text = date
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
