@@ -735,14 +735,6 @@
                                     <action selector="hydrationButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="Tqd-6W-tSv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-8t-wQb">
-                                <rect key="frame" x="249" y="379" width="104" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rewards"/>
-                                <connections>
-                                    <action selector="rewardsButton:" destination="uV8-sS-ZBL" eventType="touchUpInside" id="lLt-sR-RwE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
