@@ -78,50 +78,45 @@ class HydrationPageViewController: UIViewController {
     //functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        //display the date
+
+        //DATE
         let currentDateTime = Date()
         let formatter = DateFormatter()
         formatter.timeStyle = .none
         formatter.dateStyle = .long
         let date = formatter.string(from: currentDateTime)
-        datelabel.text = date
+        datelabel.text = date //display date
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
+        let hdate = formatter.string(from: currentDateTime) //date in hydration format
     
-        //gets the daily goal and daily total from firebase and displayes
-        databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
-            in
+        //gets the daily goal and daily total from user data on firebase and displayes
+        databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]
             {
-                //displays daily goal
-                self.dailygoal.text = "\((dict["goal"] as? String)!) oz"
-
-                //calculates and displays amount of water per cup
-                self.cupsval = Double((dict["goal"] as? String)!)!/10.0
+                self.dailygoal.text = "\((dict["goal"] as? String)!) oz" //displays daily goal
+                self.cupsval = Double((dict["goal"] as? String)!)!/10.0 //calculates and displays amount of water per cup
                 self.waterlabel.text = "ADD WATER (\(self.cupsval) oz per cup)"
-                
-                //takes last saved date and compares to todays date
-                let lastsaved = dict["lastsaved"] as? String
-                if (lastsaved == date){
-                    //displays daily goal and ounces drank
-                    self.dailytotal.text = "\((dict["dailytotal"] as? String)!) oz"
-                    //sets lastvalue to the amount of cups drank
-                    let dailytotal = Double((dict["dailytotal"] as? String)!)!
-                    self.numCupsLoads = Int(dailytotal/self.cupsval)
+            }})
+        //gets the saved water from hydration log on firebase and displays
+        databaseref.child("users").child(uid!).child("hydrationlog").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict2 = snapshot.value as? [String: AnyObject]
+            {
+                if (snapshot.hasChild(hdate)){ //if already loaded water that day... load the saved water
+                    self.dailytotal.text = "\((dict2[hdate])!) oz"
+                    let dt = Double(dict2[hdate] as! String)!
+                    self.numCupsLoads = Int(dt/self.cupsval)
                 }
-                else{
-                    self.saveTotal(value: "0")
-                    //displays daily goal and ounces drank
-                    self.dailytotal.text = "\(0) oz"
-                    //sets lastvalue to the amount of cups drank
+                else{ //if not updated water yet today... start at 0 
+                    self.saveTotal(value: "0") //displays daily goal and ounces drank
+                    self.dailytotal.text = "\(0) oz" //sets lastvalue to the amount of cups drank
                     let dailytotal = 0.0
                     self.numCupsLoads = Int(dailytotal/self.cupsval)
                 }
-                //set minimum to previous amount of cups
-                self.waterStepper.minimumValue = Double(-(self.numCupsLoads))
-                
+                self.waterStepper.minimumValue = Double(-(self.numCupsLoads))//set minimum to previous amount of cups
                 //loads cups already drank today
                 let glassArray: [UIImageView] = [self.glass1, self.glass2, self.glass3, self.glass4, self.glass5, self.glass6, self.glass7, self.glass8, self.glass9, self.glass10]
                 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-                print(self.numCupsLoads)
                 for i in numbers {
                     if (i < self.numCupsLoads)
                     {
@@ -132,14 +127,19 @@ class HydrationPageViewController: UIViewController {
                     }
                 }
             }})
-        //saves date to firebase
-        saveDate(value: String(date))
     }
     func saveTotal(value: String){
+        //get date
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
+        let date = formatter.string(from: currentDateTime)
+        
         //saves how much water to dailytotal on firebase
         let uid = Auth.auth().currentUser?.uid
-        let userReference = self.databaseref.child("users").child(uid!)
-        let values = ["dailytotal":value]
+        let userReference = self.databaseref.child("users").child(uid!).child("hydrationlog")
+        let values = [date:value]
         userReference.updateChildValues(values, withCompletionBlock: {error, ref in
             if error != nil{
                 return
