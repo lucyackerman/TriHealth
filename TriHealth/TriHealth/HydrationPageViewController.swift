@@ -61,6 +61,15 @@ class HydrationPageViewController: UIViewController {
         let newtotal = Double(tempcups)*self.cupsval
         self.dailytotal.text = "\(newtotal) oz"
         saveTotal(value: String(newtotal))
+        
+       /*
+         every time a cup is added, add 1 point to "points"
+         let points =
+        let values2 = ["points":points + 1]
+        userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
+            if error != nil{
+                return
+            }})*/
     }
     @IBAction func backToProfile(_ sender: Any) {
         openProfile()
