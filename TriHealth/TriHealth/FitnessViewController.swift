@@ -13,8 +13,10 @@ import FirebaseDatabase
 
 class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    //Back Button
+    //Message label
+    @IBOutlet weak var saveConfirmation: UILabel!
     
+    //Back Button
     @IBAction func fitnessBackButton(_ sender: Any) {
         openProfile()
     }
@@ -67,8 +69,21 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                 if error != nil{
                     return
                 }})
+            
+            //call reset to zero button
+            resetButton((Any).self)
+            saveConfirmation.text = "Your fitness data has been saved."
         }
     }
+    
+    //Reset to zero button function
+    func resetButton(_ sender: Any) {
+        timeMINFitness.text = ""
+        timeHRFitness.text = ""
+        currentSlide.value = 0
+        typeFitness.selectRow(0, inComponent: 0, animated: true)
+    }
+    
 
     //TYPE
     @IBOutlet var typeFitness: UIPickerView!
