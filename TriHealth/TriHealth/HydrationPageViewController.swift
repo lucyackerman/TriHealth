@@ -20,10 +20,11 @@ class HydrationPageViewController: UIViewController {
     let uid = Auth.auth().currentUser?.uid
     var cupsval: Double = 0.0
     var numCupsLoads: Int = 0
-    @IBOutlet var waterStepper: UIStepper!
-    @IBOutlet weak var waterNeeded: UILabel!
-    var weightSet = String()
+    var goal: Double = 0.0
+    var reachedGoal: Bool = false
     
+    //outlets
+    @IBOutlet var waterStepper: UIStepper!
     @IBOutlet var glass1: UIImageView!
     @IBOutlet var glass2: UIImageView!
     @IBOutlet var glass3: UIImageView!
@@ -38,39 +39,50 @@ class HydrationPageViewController: UIViewController {
     @IBOutlet var dailytotal: UILabel!
     @IBOutlet var waterlabel: UILabel!
     @IBOutlet var datelabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
     
     //actions
-    @IBAction func rewards(_ sender: Any) {
-        openRewards()
-    }    
+    //increases water with stepper
     @IBAction func waterAddStp(_ sender: UIStepper) {
-        
-        let glassArray: [UIImageView] = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
-        let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        let tempcups = self.numCupsLoads + Int(sender.value)
-        for i in numbers {
-                if (i < tempcups)
-                {
-                    glassArray[i].isHidden = false;
-                }
-                else {
-                    glassArray[i].isHidden = true;
-                }
-        }
-        //lastValue = Int(sender.value)
-        let newtotal = Double(tempcups)*self.cupsval
-        self.dailytotal.text = "\(newtotal) oz"
-        saveTotal(value: String(newtotal))
+            let glassArray: [UIImageView] = [glass1, glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9, glass10]
+            let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let tempcups = self.numCupsLoads + Int(sender.value)
+            for i in numbers {
+                    if (i < tempcups)
+                    {
+                        glassArray[i].isHidden = false;
+                    }
+                    else {
+                        glassArray[i].isHidden = true;
+                    }
+            }
+            let newtotal = Double(tempcups)*self.cupsval
+            //check if newtotal is daily goal
+            if newtotal == self.goal
+            {
+                messageLabel.text = "You met your goal!"
+                self.reachedGoal = true
+            }
+            else{
+                messageLabel.text = ""
+                self.reachedGoal = false
+            }
+            self.dailytotal.text = "\(newtotal) oz"
+            saveTotal(value: String(newtotal))
     }
+    //navigation buttons
     @IBAction func backToProfile(_ sender: Any) {
         openProfile()
+    }
+    @IBAction func rewards(_ sender: Any) {
+        openRewards()
     }
     
     //functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //DATE
+        //date
         let currentDateTime = Date()
         let formatter = DateFormatter()
         formatter.timeStyle = .none
@@ -86,6 +98,7 @@ class HydrationPageViewController: UIViewController {
             if let dict = snapshot.value as? [String: AnyObject]
             {
                 self.dailygoal.text = "\((dict["goal"] as? String)!) oz" //displays daily goal
+                self.goal = Double((dict["goal"] as? String)!)!
                 self.cupsval = Double((dict["goal"] as? String)!)!/10.0 //calculates and displays amount of water per cup
                 self.waterlabel.text = "ADD WATER (\(self.cupsval) oz per cup)"
             }})
@@ -105,6 +118,15 @@ class HydrationPageViewController: UIViewController {
                     self.numCupsLoads = Int(dailytotal/self.cupsval)
                 }
                 self.waterStepper.minimumValue = Double(-(self.numCupsLoads))//set minimum to previous amount of cups
+                
+                if Double(self.numCupsLoads)*self.cupsval == self.goal
+                {
+                    self.reachedGoal = true
+                }
+                else
+                {
+                    self.reachedGoal = false
+                }
                 //loads cups already drank today
                 let glassArray: [UIImageView] = [self.glass1, self.glass2, self.glass3, self.glass4, self.glass5, self.glass6, self.glass7, self.glass8, self.glass9, self.glass10]
                 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -127,14 +149,68 @@ class HydrationPageViewController: UIViewController {
         formatter.dateStyle = .medium
         let date = formatter.string(from: currentDateTime)
         
-        //saves how much water to dailytotal on firebase
+        //sets up uid reference to firebase
         let uid = Auth.auth().currentUser?.uid
         let userReference = self.databaseref.child("users").child(uid!).child("hydrationlog")
+        
+        //gets last saved water value from firebase
+        var lastval = ""
+        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject]
+            {
+                if (snapshot.hasChild(date)){
+                    lastval = dict[date] as! String
+                }
+                if lastval == "" { //if no value saved yet, increase rewards
+                    self.updateRewards(value: 1.0)
+                    self.messageLabel.text = "+1 reward point."
+                    print("a")
+                }
+                else{
+                    //checks difference in new water total and last water total
+                    print(lastval)
+                    print(value)
+                    if Double(lastval)! > Double(value)! {
+                        self.updateRewards(value: -1.0) //if decreased cups, lose reward
+                        if !self.reachedGoal{
+                            self.messageLabel.text = "-1 reward point."
+                        }
+                        print("b")
+                    }
+                    else {
+                        self.updateRewards(value: 1.0) //if increased cups, add reward
+                        if !self.reachedGoal{
+                            self.messageLabel.text = "+1 reward point."
+                        }
+                        print("c")
+                    }
+                }
+            }})
+        
+        //update the water total
         let values = [date:value]
         userReference.updateChildValues(values, withCompletionBlock: {error, ref in
             if error != nil{
                 return
             }})
+    }
+    func updateRewards(value: Double)
+    {
+        //save rewards
+        let uid = Auth.auth().currentUser?.uid
+        let userReference = self.databaseref.child("users").child(uid!)
+        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject]
+            {
+                let newRewards = dict["rewards"] as! Int + Int(value) //add or subtract from rewards value
+                let values2 = ["rewards":newRewards]
+                //save to firebase
+                userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
+                    if error != nil{
+                        return
+                    }})
+            }
+        })
     }
     func saveDate(value: String){
         //saves todays date
@@ -146,8 +222,11 @@ class HydrationPageViewController: UIViewController {
                 return
             }})
     }
+    
+    //NAVIGATION
     func openProfile()
     {
+        //segues to profile page
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(profileVC, animated: true, completion: nil)

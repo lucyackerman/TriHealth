@@ -26,6 +26,9 @@ class SignInViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.email.text = ""
+        self.password.text = ""
+        self.messageLabel.text = ""
     }
     
     //actions
@@ -39,29 +42,24 @@ class SignInViewController: UIViewController{
     //func
     func login()
     {
-        if email.text == ""{
+        if self.email.text == ""{
             self.messageLabel.text = "Please fill out email."
             return
         }
-        if password.text == ""{
+        if self.password.text == ""{
             self.messageLabel.text = "Please enter a password."
             return
         }
-        guard let email = email.text else{
-            print("email issue")
-            return
-        }
-        guard let password = password.text else{
-            print("password issue")
-            return
-        }
-        Auth.auth().signIn(withEmail:email, password:password, completion: { (user, error) in
+        let email = self.email.text
+        let password = self.password.text
+        Auth.auth().signIn(withEmail:email!, password:password!, completion: { (user, error) in
             if error != nil{
                 self.messageLabel.text = "Incorrect email or password"
-                self.dismiss(animated:true, completion: nil)
                 return
             }
+            else{
             self.openProfile()
+            }
         })
     }
     func signUp()

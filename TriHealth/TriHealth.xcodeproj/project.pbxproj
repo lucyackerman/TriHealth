@@ -20,8 +20,11 @@
 		880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E5204734060095DD90 /* ProfileViewController.swift */; };
 		8860D599206D5E0D009BDF44 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860D598206D5E0D009BDF44 /* SignUpViewController.swift */; };
 		8898B242206194F6009F2B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8898B241206194F6009F2B6A /* GoogleService-Info.plist */; };
+		88DCF5DD20BA63A800EC4C79 /* FitnessLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5DC20BA63A800EC4C79 /* FitnessLogTableViewController.swift */; };
+		88DCF5E120BA6CEC00EC4C79 /* FitnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E020BA6CEC00EC4C79 /* FitnessTableViewCell.swift */; };
+		88DCF5E520BA78FB00EC4C79 /* FitnessSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E420BA78FB00EC4C79 /* FitnessSubmission.swift */; };
+		88DCF5E720BB737400EC4C79 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E620BB737400EC4C79 /* HelpViewController.swift */; };
 		A37BE96920A61768008C655E /* RedeemRewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */; };
-		A3CBDEBA2048712E006D4AB4 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */; };
 		A3FA5D692098D843001693FC /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA5D682098D843001693FC /* RewardsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,9 +66,12 @@
 		880E37E5204734060095DD90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8860D598206D5E0D009BDF44 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8898B241206194F6009F2B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88DCF5DC20BA63A800EC4C79 /* FitnessLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessLogTableViewController.swift; sourceTree = "<group>"; };
+		88DCF5E020BA6CEC00EC4C79 /* FitnessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTableViewCell.swift; sourceTree = "<group>"; };
+		88DCF5E420BA78FB00EC4C79 /* FitnessSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessSubmission.swift; sourceTree = "<group>"; };
+		88DCF5E620BB737400EC4C79 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.release.xcconfig"; sourceTree = "<group>"; };
 		A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemRewardsViewController.swift; sourceTree = "<group>"; };
-		A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		A3CBDEBB2051B4F8006D4AB4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3FA5D682098D843001693FC /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		C4FEEE7D8591F64E55D46CF1 /* Pods_TriHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,17 +138,20 @@
 		3D7FDECA202A34DE005537F4 /* TriHealth */ = {
 			isa = PBXGroup;
 			children = (
-				A3FA5D682098D843001693FC /* RewardsViewController.swift */,
-				8898B241206194F6009F2B6A /* GoogleService-Info.plist */,
-				3D7FDECB202A34DE005537F4 /* AppDelegate.swift */,
 				3D7FDECF202A34DE005537F4 /* Main.storyboard */,
-				A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */,
-				3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */,
-				A3CBDEB92048712E006D4AB4 /* AddFoodViewController.swift */,
 				880E37E3204733EB0095DD90 /* SignInViewController.swift */,
 				8860D598206D5E0D009BDF44 /* SignUpViewController.swift */,
 				880E37E5204734060095DD90 /* ProfileViewController.swift */,
+				3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */,
 				3D6195EF2098D12000AC9ADE /* FitnessViewController.swift */,
+				88DCF5DC20BA63A800EC4C79 /* FitnessLogTableViewController.swift */,
+				88DCF5E020BA6CEC00EC4C79 /* FitnessTableViewCell.swift */,
+				88DCF5E420BA78FB00EC4C79 /* FitnessSubmission.swift */,
+				88DCF5E620BB737400EC4C79 /* HelpViewController.swift */,
+				A3FA5D682098D843001693FC /* RewardsViewController.swift */,
+				A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */,
+				8898B241206194F6009F2B6A /* GoogleService-Info.plist */,
+				3D7FDECB202A34DE005537F4 /* AppDelegate.swift */,
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
 				A3CBDEBB2051B4F8006D4AB4 /* Info.plist */,
 				3D12F081206AC922004B7BBD /* RecVC.swift */,
@@ -377,12 +386,15 @@
 				3D4DFCD1205A31AD0018E17E /* HydrationPageViewController.swift in Sources */,
 				3D6195F02098D12000AC9ADE /* FitnessViewController.swift in Sources */,
 				8860D599206D5E0D009BDF44 /* SignUpViewController.swift in Sources */,
+				88DCF5E720BB737400EC4C79 /* HelpViewController.swift in Sources */,
+				88DCF5DD20BA63A800EC4C79 /* FitnessLogTableViewController.swift in Sources */,
 				3D12F082206AC922004B7BBD /* RecVC.swift in Sources */,
-				A3CBDEBA2048712E006D4AB4 /* AddFoodViewController.swift in Sources */,
+				88DCF5E120BA6CEC00EC4C79 /* FitnessTableViewCell.swift in Sources */,
 				A37BE96920A61768008C655E /* RedeemRewardsViewController.swift in Sources */,
 				3D7FDECC202A34DE005537F4 /* AppDelegate.swift in Sources */,
 				A3FA5D692098D843001693FC /* RewardsViewController.swift in Sources */,
 				880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */,
+				88DCF5E520BA78FB00EC4C79 /* FitnessSubmission.swift in Sources */,
 				880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
