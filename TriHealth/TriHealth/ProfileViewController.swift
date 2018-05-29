@@ -48,6 +48,11 @@ class ProfileViewController: UIViewController {
         {
             let uid = Auth.auth().currentUser?.uid
             let userReference = self.databaseref.child("users").child(uid!)
+            if Int(weight.text!) == nil
+            {
+                errorMessage.text = "Please enter a number for your weight."
+            }
+            else{
             let goal = String(Int(weight.text!)!*2/3)
             let values = ["weight":weight.text]
             errorMessage.text = "Weight Saved."
@@ -65,6 +70,7 @@ class ProfileViewController: UIViewController {
                 if error != nil{
                     return
                 }})
+            }
         }
     }
     @IBAction func logout(_ sender: Any) {
@@ -92,12 +98,7 @@ class ProfileViewController: UIViewController {
         }
     }
     func logout(){
-        do{
-            try Auth.auth().signOut() //logs out user
-        }catch{
-            print("error logging out")
-        }
-        
+        try! Auth.auth().signOut()
         //segues to sign in screen
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
@@ -106,9 +107,22 @@ class ProfileViewController: UIViewController {
     func openHydration()
     {
         //segues to hydration page
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let hydrationVC:HydrationPageViewController = storyboard.instantiateViewController(withIdentifier: "hydration") as! HydrationPageViewController
-        self.present(hydrationVC, animated: true, completion: nil)
+        let uid = Auth.auth().currentUser?.uid
+        databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+        in
+        if let dict = snapshot.value as? [String: AnyObject]
+                {
+                    if dict["weight"] == nil
+                    {
+                        self.errorMessage.text = "Please save weight"
+                    }
+                    else{
+                        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let hydrationVC:HydrationPageViewController = storyboard.instantiateViewController(withIdentifier: "hydration") as! HydrationPageViewController
+                        self.present(hydrationVC, animated: true, completion: nil)
+                    }
+            }
+        })
     }
     
     func openRewards()
@@ -123,7 +137,7 @@ class ProfileViewController: UIViewController {
     {
         //segues to fitness page
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let fitnessVC:FitnessViewController = storyboard.instantiateViewController(withIdentifier: "Fitness") as! FitnessViewController
+        let fitnessVC:FitnessLogTableViewController = storyboard.instantiateViewController(withIdentifier: "FitnessLog") as! FitnessLogTableViewController
         self.present(fitnessVC, animated: true, completion: nil)
     }
 }
