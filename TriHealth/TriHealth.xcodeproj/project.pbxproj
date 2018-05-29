@@ -16,6 +16,9 @@
 		3D7FDED3202A34DE005537F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FDED2202A34DE005537F4 /* Assets.xcassets */; };
 		3D7FDEE1202A34DE005537F4 /* TriHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEE0202A34DE005537F4 /* TriHealthTests.swift */; };
 		3D7FDEEC202A34DE005537F4 /* TriHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FDEEB202A34DE005537F4 /* TriHealthUITests.swift */; };
+		880321CE20BCD0CB005835EB /* HydrationLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880321CD20BCD0CB005835EB /* HydrationLogTableViewController.swift */; };
+		880321D020BCD13D005835EB /* HydrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880321CF20BCD13D005835EB /* HydrationTableViewCell.swift */; };
+		880321D220BCD1BB005835EB /* HydrationSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880321D120BCD1BB005835EB /* HydrationSubmission.swift */; };
 		880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E3204733EB0095DD90 /* SignInViewController.swift */; };
 		880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E37E5204734060095DD90 /* ProfileViewController.swift */; };
 		8860D599206D5E0D009BDF44 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860D598206D5E0D009BDF44 /* SignUpViewController.swift */; };
@@ -24,6 +27,7 @@
 		88DCF5E120BA6CEC00EC4C79 /* FitnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E020BA6CEC00EC4C79 /* FitnessTableViewCell.swift */; };
 		88DCF5E520BA78FB00EC4C79 /* FitnessSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E420BA78FB00EC4C79 /* FitnessSubmission.swift */; };
 		88DCF5E720BB737400EC4C79 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E620BB737400EC4C79 /* HelpViewController.swift */; };
+		88DCF5E920BB7F3700EC4C79 /* RewardsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF5E820BB7F3700EC4C79 /* RewardsInfoViewController.swift */; };
 		A37BE96920A61768008C655E /* RedeemRewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */; };
 		A3FA5D692098D843001693FC /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA5D682098D843001693FC /* RewardsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,9 @@
 		46B4DBA1417451747B89C6E1 /* Pods_TriHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD66F67E4C4BF1B2E6D489F /* Pods-TriHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE109267E0CDB6B4C8ACE63 /* Pods_TriHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		880321CD20BCD0CB005835EB /* HydrationLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationLogTableViewController.swift; sourceTree = "<group>"; };
+		880321CF20BCD13D005835EB /* HydrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationTableViewCell.swift; sourceTree = "<group>"; };
+		880321D120BCD1BB005835EB /* HydrationSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationSubmission.swift; sourceTree = "<group>"; };
 		880E37E3204733EB0095DD90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		880E37E5204734060095DD90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8860D598206D5E0D009BDF44 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +77,7 @@
 		88DCF5E020BA6CEC00EC4C79 /* FitnessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTableViewCell.swift; sourceTree = "<group>"; };
 		88DCF5E420BA78FB00EC4C79 /* FitnessSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessSubmission.swift; sourceTree = "<group>"; };
 		88DCF5E620BB737400EC4C79 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		88DCF5E820BB7F3700EC4C79 /* RewardsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsInfoViewController.swift; sourceTree = "<group>"; };
 		974CF4A81C4C7A0DA9929085 /* Pods-TriHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriHealth/Pods-TriHealth.release.xcconfig"; sourceTree = "<group>"; };
 		A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemRewardsViewController.swift; sourceTree = "<group>"; };
 		A3CBDEBB2051B4F8006D4AB4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +151,9 @@
 				8860D598206D5E0D009BDF44 /* SignUpViewController.swift */,
 				880E37E5204734060095DD90 /* ProfileViewController.swift */,
 				3D4DFCD0205A31AD0018E17E /* HydrationPageViewController.swift */,
+				880321CD20BCD0CB005835EB /* HydrationLogTableViewController.swift */,
+				880321CF20BCD13D005835EB /* HydrationTableViewCell.swift */,
+				880321D120BCD1BB005835EB /* HydrationSubmission.swift */,
 				3D6195EF2098D12000AC9ADE /* FitnessViewController.swift */,
 				88DCF5DC20BA63A800EC4C79 /* FitnessLogTableViewController.swift */,
 				88DCF5E020BA6CEC00EC4C79 /* FitnessTableViewCell.swift */,
@@ -150,6 +161,7 @@
 				88DCF5E620BB737400EC4C79 /* HelpViewController.swift */,
 				A3FA5D682098D843001693FC /* RewardsViewController.swift */,
 				A37BE96820A61768008C655E /* RedeemRewardsViewController.swift */,
+				88DCF5E820BB7F3700EC4C79 /* RewardsInfoViewController.swift */,
 				8898B241206194F6009F2B6A /* GoogleService-Info.plist */,
 				3D7FDECB202A34DE005537F4 /* AppDelegate.swift */,
 				3D7FDED2202A34DE005537F4 /* Assets.xcassets */,
@@ -386,13 +398,17 @@
 				3D4DFCD1205A31AD0018E17E /* HydrationPageViewController.swift in Sources */,
 				3D6195F02098D12000AC9ADE /* FitnessViewController.swift in Sources */,
 				8860D599206D5E0D009BDF44 /* SignUpViewController.swift in Sources */,
+				88DCF5E920BB7F3700EC4C79 /* RewardsInfoViewController.swift in Sources */,
 				88DCF5E720BB737400EC4C79 /* HelpViewController.swift in Sources */,
+				880321D220BCD1BB005835EB /* HydrationSubmission.swift in Sources */,
 				88DCF5DD20BA63A800EC4C79 /* FitnessLogTableViewController.swift in Sources */,
 				3D12F082206AC922004B7BBD /* RecVC.swift in Sources */,
 				88DCF5E120BA6CEC00EC4C79 /* FitnessTableViewCell.swift in Sources */,
 				A37BE96920A61768008C655E /* RedeemRewardsViewController.swift in Sources */,
+				880321CE20BCD0CB005835EB /* HydrationLogTableViewController.swift in Sources */,
 				3D7FDECC202A34DE005537F4 /* AppDelegate.swift in Sources */,
 				A3FA5D692098D843001693FC /* RewardsViewController.swift in Sources */,
+				880321D020BCD13D005835EB /* HydrationTableViewCell.swift in Sources */,
 				880E37E6204734060095DD90 /* ProfileViewController.swift in Sources */,
 				88DCF5E520BA78FB00EC4C79 /* FitnessSubmission.swift in Sources */,
 				880E37E4204733EB0095DD90 /* SignInViewController.swift in Sources */,

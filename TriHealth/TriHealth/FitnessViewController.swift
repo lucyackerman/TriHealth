@@ -121,13 +121,28 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             let rewards = tval!/20*rigorval
             
             //upload rewards
-            let userRef = self.databaseref.child("users").child(uid!)
-            let dictPost2 = ["rewards":rewards]
-            userRef.updateChildValues(dictPost2, withCompletionBlock: {error, ref in
-                if error != nil{
-                    return
-                }})
-            
+            databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject]
+            {
+                if dict["rewards"] != nil{
+                    let currrewards = dict["rewards"] as! Int
+                    let userRef = self.databaseref.child("users").child(uid!)
+                    let newrewards = currrewards + rewards
+                    let dictPost2 = ["rewards":newrewards]
+                    userRef.updateChildValues(dictPost2, withCompletionBlock: {error, ref in
+                        if error != nil{
+                            return
+                        }})
+                }
+                else{
+                    let dictPost2 = ["rewards":rewards]
+                    let userRef = self.databaseref.child("users").child(uid!)
+                    userRef.updateChildValues(dictPost2, withCompletionBlock: {error, ref in
+                        if error != nil{
+                            return
+                        }})
+                }
+            }})
             //call reset to zero button
             resetButton((Any).self)
             saveConfirmation.text = "Saved. You earned \(rewards) points."

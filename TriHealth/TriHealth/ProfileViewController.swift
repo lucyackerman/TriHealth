@@ -107,9 +107,22 @@ class ProfileViewController: UIViewController {
     func openHydration()
     {
         //segues to hydration page
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let hydrationVC:HydrationPageViewController = storyboard.instantiateViewController(withIdentifier: "hydration") as! HydrationPageViewController
-        self.present(hydrationVC, animated: true, completion: nil)
+        let uid = Auth.auth().currentUser?.uid
+        databaseref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+        in
+        if let dict = snapshot.value as? [String: AnyObject]
+                {
+                    if dict["weight"] == nil
+                    {
+                        self.errorMessage.text = "Please save weight"
+                    }
+                    else{
+                        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let hydrationVC:HydrationPageViewController = storyboard.instantiateViewController(withIdentifier: "hydration") as! HydrationPageViewController
+                        self.present(hydrationVC, animated: true, completion: nil)
+                    }
+            }
+        })
     }
     
     func openRewards()

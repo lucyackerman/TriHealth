@@ -18,7 +18,6 @@ class FitnessLogTableViewController: UITableViewController {
     let storageref = Storage.storage().reference()
     let databaseref = Database.database().reference()
     let uid = Auth.auth().currentUser?.uid
-    //var refHandle: UInt!
     var submissionList = [FitnessSubmission]()
     
     //actions

@@ -22,24 +22,26 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet var messageLabel: UILabel!
     
+    //actions
     @IBAction func cancel(_ sender: Any) {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let signUpVC:SignInViewController = storyboard.instantiateViewController(withIdentifier: "signin") as! SignInViewController
         self.present(signUpVC, animated: true, completion: nil)
     }
-    //actions
     @IBAction func signup(_ sender: Any) {
         signUp()
     }
+    @IBAction func clearMessage(_ sender: Any) {
+        self.messageLabel.text = ""
+    }
     
-    //func
+    //functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     func signUp()
     {
+        //checks if all fields are filled out
         if email.text == ""{
             self.messageLabel.text = "Please fill out email."
             return
@@ -60,9 +62,21 @@ class SignUpViewController: UIViewController {
             self.messageLabel.text = "Please enter your name."
             return
         }
+        //tries to create user, displays error
         Auth.auth().createUser(withEmail:email, password:password, completion: {(user,error) in
             if error != nil{
-                self.messageLabel.text = "User already exists with that email"
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                    case .invalidEmail:
+                        self.messageLabel.text = "Email invalid"
+                    case .emailAlreadyInUse:
+                        self.messageLabel.text = "User already exists with that email"
+                    case .weakPassword:
+                        self.messageLabel.text = "Password must be at least 6 characters"
+                    default:
+                        self.messageLabel.text = "Unknown error"
+                    }
+                }
                 return
             }
             guard let uid = user?.uid else{
@@ -76,7 +90,7 @@ class SignUpViewController: UIViewController {
                     return
                 }
                 self.dismiss(animated: true, completion: nil)
-                self.login()
+                self.login() //if successful, logs in
             })
         })
         

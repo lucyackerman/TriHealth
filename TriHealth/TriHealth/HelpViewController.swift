@@ -10,10 +10,14 @@ import UIKit
 
 class HelpViewController: UIViewController {
 
- 
+    //functions
     @IBAction func backButton(_ sender: Any) {
         openFitness()
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     //NAVIGATION
     func openFitness()
     {

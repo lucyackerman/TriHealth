@@ -30,6 +30,9 @@ class RewardsViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         backToProfile()
     }
+    @IBAction func helpButton(_ sender: Any) {
+        openRewardInfo()
+    }
     @IBAction func redeemButton(_ sender: Any){
         //if user hasnt reached goal
         if self.points > 100
@@ -92,6 +95,12 @@ class RewardsViewController: UIViewController {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let redeemVC:RedeemRewardsViewController = storyboard.instantiateViewController(withIdentifier: "redeem") as! RedeemRewardsViewController
         self.present(redeemVC, animated: true, completion: nil)
+    }
+    func openRewardInfo()
+    {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rewardIVC:RewardsInfoViewController = storyboard.instantiateViewController(withIdentifier: "rewardsInfo") as! RewardsInfoViewController
+        self.present(rewardIVC, animated: true, completion: nil)
     }
 
 }

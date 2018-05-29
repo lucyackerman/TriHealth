@@ -13,9 +13,9 @@ import FirebaseAuth
 
 class SignInViewController: UIViewController{
     
-    
     //variables
     let databaseref = Database.database().reference()
+    
     //outlets
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -39,29 +39,32 @@ class SignInViewController: UIViewController{
         signUp()
     }
     
-    //func
+    //functions
     func login()
     {
-        if self.email.text == ""{
+        if self.email.text == ""{ //checks if email entered
             self.messageLabel.text = "Please fill out email."
             return
         }
-        if self.password.text == ""{
+        if self.password.text == ""{ //checks if password entered
             self.messageLabel.text = "Please enter a password."
             return
         }
         let email = self.email.text
         let password = self.password.text
+        //tries to log in user, displays error
         Auth.auth().signIn(withEmail:email!, password:password!, completion: { (user, error) in
             if error != nil{
                 self.messageLabel.text = "Incorrect email or password"
                 return
             }
             else{
-            self.openProfile()
+                //if log in sucessful open profile
+                self.openProfile()
             }
         })
     }
+    //NAVIGATION
     func signUp()
     {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

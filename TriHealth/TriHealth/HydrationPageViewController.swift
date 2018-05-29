@@ -77,6 +77,10 @@ class HydrationPageViewController: UIViewController {
     @IBAction func rewards(_ sender: Any) {
         openRewards()
     }
+
+    @IBAction func logButton(_ sender: Any) {
+        openLog()
+    }
     
     //functions
     override func viewDidLoad() {
@@ -164,25 +168,20 @@ class HydrationPageViewController: UIViewController {
                 if lastval == "" { //if no value saved yet, increase rewards
                     self.updateRewards(value: 1.0)
                     self.messageLabel.text = "+1 reward point."
-                    print("a")
                 }
                 else{
                     //checks difference in new water total and last water total
-                    print(lastval)
-                    print(value)
                     if Double(lastval)! > Double(value)! {
                         self.updateRewards(value: -1.0) //if decreased cups, lose reward
                         if !self.reachedGoal{
                             self.messageLabel.text = "-1 reward point."
                         }
-                        print("b")
                     }
                     else {
                         self.updateRewards(value: 1.0) //if increased cups, add reward
                         if !self.reachedGoal{
                             self.messageLabel.text = "+1 reward point."
                         }
-                        print("c")
                     }
                 }
             }})
@@ -237,6 +236,13 @@ class HydrationPageViewController: UIViewController {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let rewardsVC:RewardsViewController = storyboard.instantiateViewController(withIdentifier: "rewards") as! RewardsViewController
         self.present(rewardsVC, animated: true, completion: nil)
+    }
+    func openLog()
+    {
+        //segues to log
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let logVC:HydrationLogTableViewController = storyboard.instantiateViewController(withIdentifier: "hydrationLog") as! HydrationLogTableViewController
+        self.present(logVC, animated: true, completion: nil)
     }
     
 }
