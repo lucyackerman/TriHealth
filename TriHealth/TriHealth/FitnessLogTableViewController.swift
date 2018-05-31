@@ -31,7 +31,6 @@ class FitnessLogTableViewController: UITableViewController {
     //functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //load exercises
         loadExercise()
     }
@@ -41,20 +40,18 @@ class FitnessLogTableViewController: UITableViewController {
         databaseref.child("users").child(uid!).child("fitnesslog").observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]
             {
-                let arr = Array(dict)
+                let fitnessarr = Array(dict)
                 var a = 0
-                while a < dict.count
+                while a < dict.count //makes an array of all the days fitness was submitted
                 {
-                    let date = arr[a].key
-                    dateArr.append(date)
+                    dateArr.append(fitnessarr[a].key)
                     a = a + 1
                 }
-                for dateval in dateArr
+                for dateval in dateArr //gets submission for each day in the date array
                 {
                     self.databaseref.child("users").child(self.uid!).child("fitnesslog").child(dateval).observeSingleEvent(of: .value, with: { (snapshot) in
                         if let dict2 = snapshot.value as? [String: AnyObject]
                         {
-                            
                             var timeArr = [String]()
                             let subarr = Array(dict2)
                             var b = 0
@@ -68,14 +65,14 @@ class FitnessLogTableViewController: UITableViewController {
                                 self.databaseref.child("users").child(self.uid!).child("fitnesslog").child(dateval).child(timeval).observeSingleEvent(of: .value, with: { (snapshot) in
                                         if let dict3 = snapshot.value as? [String: AnyObject]
                                         {
-                                            let submission = FitnessSubmission()
-                                            submission.date = dateval
+                                            let submission = FitnessSubmission() //make new fitnesssubmission with values for each
+                                            submission.date = dateval               //submission on firebase
                                             submission.type = (dict3["fitnesstype"] as! String)
                                             submission.rigor = (dict3["rigor"] as! String)
                                             submission.time = (dict3["time"] as! String)
                                             self.submissionList.append(submission)
                                             self.submissionList.sort {
-                                                return $0.date! > $1.date!
+                                                return $0.date! > $1.date! //sorts submissions w most recent date on top
                                             }
                                             DispatchQueue.main.async {
                                                 self.tableView.reloadData()
@@ -98,16 +95,13 @@ class FitnessLogTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = FitnessTableViewCell(style: .subtitle, reuseIdentifier: "cellid")
-        
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "FitnessTableViewCell"
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FitnessTableViewCell  else {
             fatalError("The dequeued cell is not an instance of FitnessTableViewCell.")
         }
         
-        //set cell contents
+        //display submission contents on cell
         cell.dateLabel.text = submissionList[indexPath.row].date
         cell.exerciseLabel.text = submissionList[indexPath.row].type
         cell.rigorLabel.text = submissionList[indexPath.row].rigor

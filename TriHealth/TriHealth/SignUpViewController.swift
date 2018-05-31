@@ -114,6 +114,7 @@ class SignUpViewController: UIViewController {
             self.openProfile()
         })
     }
+    //NAVIGATION
     func openProfile()
     {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

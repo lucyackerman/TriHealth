@@ -33,19 +33,16 @@ class ProfileViewController: UIViewController {
         }
         else{ errorMessage.text = "Please add a weight to your profile."}
     }
-    
-
     @IBAction func rewardsButton(_ sender: UIButton) {
-        openRewards()
+        openRewards()//segues to rewards page
     }
-    
     @IBAction func fitnessButton(_ sender: Any) {
         openFitness() //segues to fitness page
     }
-    
     @IBAction func saveChangesButton(_ sender: Any) {
         if weight.text != ""
         {
+            //reference to datebase
             let uid = Auth.auth().currentUser?.uid
             let userReference = self.databaseref.child("users").child(uid!)
             if Int(weight.text!) == nil
@@ -53,23 +50,29 @@ class ProfileViewController: UIViewController {
                 errorMessage.text = "Please enter a number for your weight."
             }
             else{
-            let goal = String(Int(weight.text!)!*2/3)
-            let values = ["weight":weight.text]
-            errorMessage.text = "Weight Saved."
-            userReference.updateChildValues(values, withCompletionBlock: {error, ref in
-                if error != nil{
-                    return
-                }})
-            let values2 = ["goal":goal]
-            userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
-                if error != nil{
-                    return
-                }})
-            let values3 = ["dailytotal":String(0)]
-            userReference.updateChildValues(values3, withCompletionBlock: {error, ref in
-                if error != nil{
-                    return
-                }})
+                //calculates goal from entered weight
+                let goal = String(Int(weight.text!)!*2/3)
+                //saves weight, goal, and daily total (0) to firebase
+                let weightVal = String(self.weight.text!)
+                let values = ["weight":weightVal]
+                errorMessage.text = "Weight Saved."
+                userReference.updateChildValues(values, withCompletionBlock: {error, ref in
+                    if error != nil{
+                        return
+                    }
+                })
+                let values2 = ["goal":goal]
+                userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
+                    if error != nil{
+                        return
+                    }
+                })
+                let values3 = ["dailytotal":String(0)]
+                userReference.updateChildValues(values3, withCompletionBlock: {error, ref in
+                    if error != nil{
+                        return
+                    }
+                })
             }
         }
     }
@@ -98,12 +101,14 @@ class ProfileViewController: UIViewController {
         }
     }
     func logout(){
+        //detatches reference to firebase
         try! Auth.auth().signOut()
         //segues to sign in screen
         let storyboard = UIStoryboard(name:"Main",bundle:nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "signin")
         present(loginViewController, animated: true, completion: nil)
     }
+    //NAVIGATION
     func openHydration()
     {
         //segues to hydration page
@@ -124,7 +129,6 @@ class ProfileViewController: UIViewController {
             }
         })
     }
-    
     func openRewards()
     {
         //segues to rewards page

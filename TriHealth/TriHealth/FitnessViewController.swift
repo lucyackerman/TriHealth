@@ -71,25 +71,25 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             //type
             let type = sportsType[typeFitness.selectedRow(inComponent: 0)]
             //rigor
-            var rigor = ""
-            var rigorval = 1
+            var rigor = "" //rigor string stored in firebase
+            var rigorval = 1 //rigor value to calculate rewards
             if(currentSlide.value <= 1){
-                 rigor = "easy"
+                rigor = "Easy"
                 rigorval = 1
             }
             else if(currentSlide.value <= 2){
-                 rigor = "medium"
+                rigor = "Medium"
                 rigorval = 2
             }
             else{
-                 rigor = "hard"
+                rigor = "Hard"
                 rigorval = 3
             }
             
             //total time in min
             var time = "0"
-            if timeHRFitness.text == "" || timeMINFitness.text == ""{
-                if timeHRFitness.text == ""{
+            if timeHRFitness.text == "" || timeMINFitness.text == ""{ //if either of the text fields are empty
+                if timeHRFitness.text == ""{                           //upload only the entered text field
                     time = String(Int(timeMINFitness.text!)!)}
                 if timeMINFitness.text == ""{
                     time = String(Int(timeHRFitness.text!)!*60)
@@ -97,7 +97,7 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             }
             else{
                 time = String((Int(timeHRFitness.text!)!*60) + Int(timeMINFitness.text!)!)
-                }
+            }
             
             //uid and references
             let uid = Auth.auth().currentUser?.uid
@@ -112,12 +112,6 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             
             //update rewards
             let tval = Int(time)
-            if(currentSlide.value <= 1){
-                rigor = "easy"}
-            else if(currentSlide.value <= 2){
-                rigor = "medium"}
-            else{
-                rigor = "hard"}
             let rewards = tval!/20*rigorval
             
             //upload rewards
@@ -125,16 +119,16 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             if let dict = snapshot.value as? [String: AnyObject]
             {
                 if dict["rewards"] != nil{
-                    let currrewards = dict["rewards"] as! Int
+                    let currrewards = dict["rewards"] as! Int //gets old rewards points to add to current rewards
                     let userRef = self.databaseref.child("users").child(uid!)
                     let newrewards = currrewards + rewards
-                    let dictPost2 = ["rewards":newrewards]
+                    let dictPost2 = ["rewards":newrewards] //uploads new reward points
                     userRef.updateChildValues(dictPost2, withCompletionBlock: {error, ref in
                         if error != nil{
                             return
                         }})
                 }
-                else{
+                else{ //if no rewards points uploaded yet, create rewards value
                     let dictPost2 = ["rewards":rewards]
                     let userRef = self.databaseref.child("users").child(uid!)
                     userRef.updateChildValues(dictPost2, withCompletionBlock: {error, ref in
@@ -165,7 +159,6 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     //on load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //display the date
         let currentDateTime = Date()
         let formatter = DateFormatter()
@@ -173,7 +166,6 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         formatter.dateStyle = .long
         let date = formatter.string(from: currentDateTime)
         datelabel.text = date
-        // Do any additional setup after loading the view.
     }
     //Reset to zero button function
     func resetButton(_ sender: Any) {
@@ -182,7 +174,6 @@ class FitnessViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         currentSlide.value = 0
         typeFitness.selectRow(0, inComponent: 0, animated: true)
     }
-    
     //NAVIGATION
     func openFitness()
     {

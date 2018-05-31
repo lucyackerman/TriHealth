@@ -68,16 +68,16 @@ class HydrationPageViewController: UIViewController {
                 self.reachedGoal = false
             }
             self.dailytotal.text = "\(newtotal) oz"
+            //saves the new updated water total to firebase
             saveTotal(value: String(newtotal))
     }
-    //navigation buttons
+    //actions
     @IBAction func backToProfile(_ sender: Any) {
         openProfile()
     }
     @IBAction func rewards(_ sender: Any) {
         openRewards()
     }
-
     @IBAction func logButton(_ sender: Any) {
         openLog()
     }
@@ -86,7 +86,7 @@ class HydrationPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //date
+        //find date
         let currentDateTime = Date()
         let formatter = DateFormatter()
         formatter.timeStyle = .none
@@ -122,7 +122,6 @@ class HydrationPageViewController: UIViewController {
                     self.numCupsLoads = Int(dailytotal/self.cupsval)
                 }
                 self.waterStepper.minimumValue = Double(-(self.numCupsLoads))//set minimum to previous amount of cups
-                
                 if Double(self.numCupsLoads)*self.cupsval == self.goal
                 {
                     self.reachedGoal = true
@@ -135,12 +134,12 @@ class HydrationPageViewController: UIViewController {
                 let glassArray: [UIImageView] = [self.glass1, self.glass2, self.glass3, self.glass4, self.glass5, self.glass6, self.glass7, self.glass8, self.glass9, self.glass10]
                 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                 for i in numbers {
-                    if (i < self.numCupsLoads)
+                    if (i < self.numCupsLoads) //if the glass is less than the total cups
                     {
-                        glassArray[i].isHidden = false;
+                        glassArray[i].isHidden = false; //show glass
                     }
                     else{
-                        glassArray[i].isHidden = true
+                        glassArray[i].isHidden = true //otherwise hide glass
                     }
                 }
             }})
@@ -163,7 +162,7 @@ class HydrationPageViewController: UIViewController {
             if let dict = snapshot.value as? [String: AnyObject]
             {
                 if (snapshot.hasChild(date)){
-                    lastval = dict[date] as! String
+                    lastval = dict[date] as! String //gets the last saved water total from firebase
                 }
                 if lastval == "" { //if no value saved yet, increase rewards
                     self.updateRewards(value: 1.0)
@@ -185,15 +184,14 @@ class HydrationPageViewController: UIViewController {
                     }
                 }
             }})
-        
         //update the water total
-        let values = [date:value]
-        userReference.updateChildValues(values, withCompletionBlock: {error, ref in
+        let valueToLoad = [date:value]
+        userReference.updateChildValues(valueToLoad, withCompletionBlock: {error, ref in
             if error != nil{
                 return
             }})
     }
-    func updateRewards(value: Double)
+    func updateRewards(value: Double) //value is the change in rewards that needs to be saved
     {
         //save rewards
         let uid = Auth.auth().currentUser?.uid
@@ -202,9 +200,9 @@ class HydrationPageViewController: UIViewController {
             if let dict = snapshot.value as? [String: AnyObject]
             {
                 let newRewards = dict["rewards"] as! Int + Int(value) //add or subtract from rewards value
-                let values2 = ["rewards":newRewards]
+                let valueToLoad = ["rewards":newRewards]
                 //save to firebase
-                userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
+                userReference.updateChildValues(valueToLoad, withCompletionBlock: {error, ref in
                     if error != nil{
                         return
                     }})
@@ -215,8 +213,8 @@ class HydrationPageViewController: UIViewController {
         //saves todays date
         let uid = Auth.auth().currentUser?.uid
         let userReference = self.databaseref.child("users").child(uid!)
-        let values2 = ["lastsaved":value]
-        userReference.updateChildValues(values2, withCompletionBlock: {error, ref in
+        let valuesToLoad = ["lastsaved":value]
+        userReference.updateChildValues(valuesToLoad, withCompletionBlock: {error, ref in
             if error != nil{
                 return
             }})

@@ -64,6 +64,7 @@ class SignInViewController: UIViewController{
             }
         })
     }
+    
     //NAVIGATION
     func signUp()
     {

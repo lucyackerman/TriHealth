@@ -81,23 +81,24 @@ class RewardsViewController: UIViewController {
             if error != nil{
                 return
             }})
-
     }
     func backToProfile()
     {
+        //segues to profile
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileVC:ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         self.present(profileVC, animated: true, completion: nil)
     }
-    //segues to redeem rewards
     func openRedeemRewards()
     {
+        //segues to redeem rewards
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let redeemVC:RedeemRewardsViewController = storyboard.instantiateViewController(withIdentifier: "redeem") as! RedeemRewardsViewController
         self.present(redeemVC, animated: true, completion: nil)
     }
     func openRewardInfo()
     {
+        //segues to reward info
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let rewardIVC:RewardsInfoViewController = storyboard.instantiateViewController(withIdentifier: "rewardsInfo") as! RewardsInfoViewController
         self.present(rewardIVC, animated: true, completion: nil)
